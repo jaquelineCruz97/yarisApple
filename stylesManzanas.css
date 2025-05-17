@@ -1,0 +1,79 @@
+/* Reset de márgenes y paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body{
+  background-image: url(https://i.postimg.cc/prqBGR0N/watercolour-green-background.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  }
+  
+  /* Contenedor principal */
+  .container {
+    display: flex;
+    flex-direction: column;     /* Organiza en columna */
+    align-items: center;        /* Centra horizontalmente */
+    justify-content: center;    /* Centra verticalmente */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
+    width: 20vh;               /* Tamaño del logo */
+    height: auto;
+    margin-bottom: 10px;        /* Espacio entre logo y texto */
+    
+  }
+  /* Estilo de Header */
+  
+  nav ul {
+position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 3vh;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   font-family: 'Montserrat', sans-serif;
+  }
+  
+  nav ul li {
+    list-style: none;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: rgb(7, 110, 3);
+    font-size: 1.1rem;
+    padding: 8px 20px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    background-color: #045024;
+    color: white;
+  }
+  
+
+  main {
+    padding: 40px 0;
+    align-items:flex-start;
+  }
+
+   /* Estilo de Footer */
+  footer {
+    background-color: #015826; 
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 1rem;
+  }
+  
+  footer p {
+    font-family: 'Arial', sans-serif;
+  }
