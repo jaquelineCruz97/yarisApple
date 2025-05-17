@@ -143,6 +143,13 @@ position: sticky;
   footer p {
     font-family: 'Arial', sans-serif;
   }
+
+
+
+
+
+
+
   
  @media (max-width: 480px) {
   .container {
@@ -165,19 +172,33 @@ position: sticky;
   }
 
   .carousel {
-    max-width: 100%;
-    height: auto;
-  }
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  overflow: hidden;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
 
-  .slides {
-    flex-direction: row;
-  }
+.slides {
+  display: flex;
+  width: 300%; /* 3 imágenes */
+  animation: slide 15s infinite;
+}
 
-  .slides img {
-    width: 100%;
-    height: auto;
-  }
+.slides img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
 
+@keyframes slide {
+  0%    { transform: translateX(0); }
+  33.33%   { transform: translateX(-100%); }
+  66.66%   { transform: translateX(-200%); }
+  100%  { transform: translateX(0); }
+}
   main {
     flex-direction: column;
     padding: 10px;
