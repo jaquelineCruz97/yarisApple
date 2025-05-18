@@ -169,14 +169,7 @@ position: sticky;
 
   @media (max-width: 480px) {
   .carousel {
-    width: 95%;               /* Reduce márgenes laterales */
-    aspect-ratio: 16 / 9;     /* Mantiene proporción */
-    margin: 10px auto;
-    border-radius: 8px;
-  }
-
-  .slides img {
-    border-radius: 8px;
+    display: none;
   }
   
   main {
