@@ -146,7 +146,9 @@ position: sticky;
   }
 
 
+
   
+
  @media (max-width: 480px) {
   .container {
     padding: 10px;
@@ -166,8 +168,6 @@ position: sticky;
     font-size: 0.9rem;
     padding: 5px 12px;
   }
-
-  @media (max-width: 480px) {
   .carousel {
     display: none;
   }
@@ -196,6 +196,7 @@ position: sticky;
     font-size: 1rem;
   }
 }
+ 
 
 @media (min-width: 481px) and (max-width: 768px) {
   .container {
@@ -247,6 +248,7 @@ position: sticky;
   }
 
   .quienesSomos p {
+  
     font-size: 1.1rem;
   }
 }
