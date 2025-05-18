@@ -149,7 +149,7 @@ position: sticky;
 
   
 
- @media (max-width: 480px) {
+ @media (min-width: 100px) and (max-width: 480px) {
   .container {
     padding: 10px;
   }
