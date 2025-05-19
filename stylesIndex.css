@@ -174,11 +174,39 @@ position: sticky;
     padding: 10px;
   }
 
-  .carousel {
-    max-width: 80%;
-    height: auto;
-    aspect-ratio: 16 / 9;
-  }
+.carousel {
+  width: 90%;
+  max-width: 600px;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  background-color: #f0f0f0;
+}
+
+.slides {
+  display: flex;
+  width: 300%; /* 3 imágenes de 100% */
+  height: 100%;
+  animation: slide 15s infinite;
+}
+
+.slides img {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center; /* ajusta la parte visible */
+}
+
+/* Animación sin valores fijos */
+@keyframes slide {
+  0%   { transform: translateX(0); }
+  33%  { transform: translateX(-100%); }
+  66%  { transform: translateX(-200%); }
+  100% { transform: translateX(0); }
+}
   .imgEslogan {
     width: 100%;
     max-width: 100%;
