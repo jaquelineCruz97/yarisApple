@@ -146,10 +146,8 @@ position: sticky;
   }
 
 
-
   
-
- @media (min-width: 100px) and (max-width: 480px) {
+ @media (max-width: 480px) {
   .container {
     padding: 10px;
   }
@@ -162,21 +160,25 @@ position: sticky;
     flex-direction: column;
     gap: 10px;
     padding: 1vh;
-  }
+   }
 
   nav ul li a {
     font-size: 0.9rem;
     padding: 5px 12px;
   }
-  .carousel {
-    display: none;
-  }
+
+  
   
   main {
     flex-direction: column;
     padding: 10px;
   }
 
+  .carousel {
+    max-width: 50%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
   .imgEslogan {
     width: 100%;
     max-width: 100%;
@@ -196,7 +198,6 @@ position: sticky;
     font-size: 1rem;
   }
 }
- 
 
 @media (min-width: 481px) and (max-width: 768px) {
   .container {
@@ -248,7 +249,6 @@ position: sticky;
   }
 
   .quienesSomos p {
-  
     font-size: 1.1rem;
   }
 }
