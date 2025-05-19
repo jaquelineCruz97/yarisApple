@@ -28,6 +28,13 @@
     margin-bottom: 10px;        /* Espacio entre logo y texto */
     
   }
+
+  .menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #015826;
+}
   /* Estilo de Header */
   
   nav ul {
@@ -156,18 +163,31 @@ position: sticky;
     max-width: 180px;
   }
 
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-    padding: 1vh;
-   }
-
-  nav ul li a {
-    font-size: 0.9rem;
-    padding: 5px 12px;
+ .menu-toggle {
+    display: block;
   }
 
-  
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    padding: 10px;
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    left: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
   
   main {
     flex-direction: column;
@@ -236,15 +256,32 @@ position: sticky;
     max-width: 250px;
   }
 
-  nav ul {
-    flex-wrap: wrap;
-    gap: 15px;
+   .menu-toggle {
+    display: block;
   }
 
-  nav ul li a {
-    font-size: 1rem;
-    padding: 6px 14px;
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    padding: 10px;
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    left: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
 
   .carousel {
     max-width: 90%;
