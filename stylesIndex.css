@@ -175,7 +175,7 @@ position: sticky;
   }
 
   .carousel {
-    max-width: 50%;
+    max-width: 85%;
     height: auto;
     aspect-ratio: 16 / 9;
   }
