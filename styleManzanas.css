@@ -61,7 +61,7 @@ position: sticky;
   }
   
 
-  /* Estilo de Footer */
+    /* Estilo de Footer */
   footer {
     background-color: #015826; 
     color: white;
@@ -73,6 +73,23 @@ position: sticky;
   footer p {
     font-family: 'Arial', sans-serif;
   }
+
+  footer .social-icons {
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+footer .social-icons a img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+footer .social-icons a:hover img {
+  transform: scale(1.2);
+}
 
 
   
