@@ -66,7 +66,7 @@
   <input type="text" id="tematica" name="tematica">
 
   <label for="imagen">Sugerencia de imagen:</label>
-  <input type="file" id="imagen" name="imagen">
+  <input type="file" name="imagen" accept="image/*">
 
   <label>Listo:</label>
   <div class="checkbox-group">
@@ -80,9 +80,10 @@
     <label><input type="checkbox" name="presentacion" value="vaso"> Vaso de acrílico</label>
   </div>
   
-  <input type="hidden" name="_next" value="https://tusitio.com/gracias.html">
+   <input type="hidden" name="_next" value="https://tusitio.com/gracias.html">
   <input type="hidden" name="_captcha" value="false">
-  <button type="submit">Enviar por Correo</button>
+
+  <button type="submit">Enviar</button>
 </form>
 
 <script>
