@@ -32,7 +32,7 @@
 
     <!-- Main Section -->
     <main>
-<form action="https://formsubmit.co/jaqueliner.cruz.97.jc@gmail.com" method="POST" enctype="multipart/form-data">
+      <form action="https://formsubmit.co/jaqueliner.cruz.97.jc@gmail.com" method="POST" enctype="multipart/form-data">
   <h2>¿Tienes un evento en puerta?</h2>
   <p>Cotiza tus manzanas 🍏</p>
 
@@ -40,17 +40,19 @@
   <input type="number" id="cantidad" name="cantidad" required>
 
   <label>Sabores:</label>
-  <label><input type="checkbox" name="sabor[]" value="Tamarindo"> Tamarindo</label>
-  <label><input type="checkbox" name="sabor[]" value="Chocolate" onchange="toggleColores()"> Chocolate</label>
+  <div class="checkbox-group">
+    <label><input type="checkbox" name="sabor[]" value="Tamarindo"> Tamarindo</label>
+    <label><input type="checkbox" name="sabor[]" value="Chocolate" id="chocolateCheckbox" onchange="toggleColores()"> Chocolate</label>
+  </div>
 
   <div id="coloresChocolate" style="display: none;">
     <p>Colores disponibles para chocolate:</p>
-    <label><input type="checkbox" name="color[]" value="Azul"> Azul</label>
-    <label><input type="checkbox" name="color[]" value="Rosa"> Rosa</label>
-    <label><input type="checkbox" name="color[]" value="Rojo"> Rojo</label>
-    <label><input type="checkbox" name="color[]" value="Amarillo"> Amarillo</label>
-    <label><input type="checkbox" name="color[]" value="Lila"> Lila</label>
-    <label><input type="checkbox" name="color[]" value="Blanco"> Blanco</label>
+    <label><input type="checkbox" name="color[]" value="Azul"> Azul</label><br>
+    <label><input type="checkbox" name="color[]" value="Rosa"> Rosa</label><br>
+    <label><input type="checkbox" name="color[]" value="Rojo"> Rojo</label><br>
+    <label><input type="checkbox" name="color[]" value="Amarillo"> Amarillo</label><br>
+    <label><input type="checkbox" name="color[]" value="Lila"> Lila</label><br>
+    <label><input type="checkbox" name="color[]" value="Blanco"> Blanco</label><br>
     <label><input type="checkbox" name="color[]" value="Café"> Café</label>
   </div>
 
@@ -71,22 +73,22 @@
   <label><input type="checkbox" name="presentacion[]" value="Bolsita celofán"> Bolsita celofán</label>
   <label><input type="checkbox" name="presentacion[]" value="Vaso de acrílico"> Vaso de acrílico</label>
 
-  <!-- Configuración oculta de Formsubmit -->
+  <!-- Configuración de FormSubmit -->
   <input type="hidden" name="_next" value="https://tusitio.com/gracias.html">
   <input type="hidden" name="_captcha" value="false">
 
   <button type="submit">Enviar</button>
 </form>
+      </main>
+     
 
 <script>
-  function toggleColores() {
-    const checkbox = document.getElementById('chocolateCheckbox');
-    const colores = document.getElementById('coloresChocolate');
-    colores.classList.toggle('hidden', !checkbox.checked);
-  }
+function toggleColores() {
+  const checkbox = document.getElementById("chocolateCheckbox");
+  const coloresDiv = document.getElementById("coloresChocolate");
+  coloresDiv.style.display = checkbox.checked ? "block" : "none";
+}
 </script>
-
-     </main>
         
   <br>
       <!-- Footer -->
@@ -102,5 +104,6 @@
   </div>
   <p>&copy; 2025 Yari´s Apple</p>
 </footer>
+
     </body>
     </html>
