@@ -32,7 +32,8 @@
 
     <!-- Main Section -->
     <main>
-      <section class="formManzanas">
+<form class="formManzanas" action="https://formsubmit.co/tu-correo@gmail.com" method="POST">
+ 
   <h2>¿Tienes un evento en puerta?</h2>
   <p>Cotiza tus manzanas 🍏</p>
 
@@ -77,35 +78,12 @@
   <div class="checkbox-group">
     <label><input type="checkbox" name="presentacion" value="celofan"> Bolsita celofán</label>
     <label><input type="checkbox" name="presentacion" value="vaso"> Vaso de acrílico</label>
-    </div>
-<button type="button" onclick="enviarWhatsApp()">Enviar por WhatsApp</button>
-</section>
-
-<script>
-function enviarWhatsApp() {
-  const cantidad = document.getElementById('cantidad').value;
-  const evento = document.getElementById('evento').value;
-  const tematica = document.getElementById('tematica').value;
-
-  const sabores = [...document.querySelectorAll('input[name="sabor"]:checked')].map(cb => cb.value).join(', ');
-  const colores = [...document.querySelectorAll('input[name="color"]:checked')].map(cb => cb.value).join(', ');
-  const listo = [...document.querySelectorAll('input[name="listo"]:checked')].map(cb => cb.value).join(', ');
-  const presentacion = [...document.querySelectorAll('input[name="presentacion"]:checked')].map(cb => cb.value).join(', ');
-
-  const mensaje = `¡Hola! Quiero cotizar manzanas 🍏
-Cantidad: ${cantidad}
-Sabores: ${sabores}
-Colores Chocolate: ${colores}
-Tipo de evento: ${evento}
-Temática: ${tematica}
-Listo: ${listo}
-Presentación: ${presentacion}`;
-
-  const telefono = "5216567713238"; // Cambia al número de WhatsApp
-  const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
-  window.open(url, '_blank');
-}
-</script>
+  </div>
+  
+  <input type="hidden" name="_next" value="https://tusitio.com/gracias.html">
+  <input type="hidden" name="_captcha" value="false">
+  <button type="submit">Enviar por Correo</button>
+</form>
 
 <script>
   function toggleColores() {
