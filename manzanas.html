@@ -32,30 +32,26 @@
 
     <!-- Main Section -->
     <main>
-<section class="formManzanas" action="https://formsubmit.co/jaqueliner.cruz.97.jc@gmail.com" method="POST" enctype="multipart/form-data">
+<form action="https://formsubmit.co/jaqueliner.cruz.97.jc@gmail.com" method="POST" enctype="multipart/form-data">
   <h2>¿Tienes un evento en puerta?</h2>
   <p>Cotiza tus manzanas 🍏</p>
 
   <label for="cantidad">Cantidad:</label>
-  <input type="number" id="cantidad" name="cantidad" min="1" required>
+  <input type="number" id="cantidad" name="cantidad" required>
 
   <label>Sabores:</label>
-  <div class="checkbox-group">
-    <label><input type="checkbox" name="sabor" value="tamarindo"> Tamarindo</label>
-    <label><input type="checkbox" name="sabor" value="chocolate" id="chocolateCheckbox" onchange="toggleColores()"> Chocolate</label>
-  </div>
+  <label><input type="checkbox" name="sabor[]" value="Tamarindo"> Tamarindo</label>
+  <label><input type="checkbox" name="sabor[]" value="Chocolate" onchange="toggleColores()"> Chocolate</label>
 
-  <div id="coloresChocolate" class="hidden">
-    <label>Colores disponibles para chocolate:</label>
-    <div class="color-options">
-      <label><input type="checkbox" name="color" value="Azul"> Azul</label><br>
-      <label><input type="checkbox" name="color" value="Rosa"> Rosa</label><br>
-      <label><input type="checkbox" name="color" value="Rojo"> Rojo</label><br>
-      <label><input type="checkbox" name="color" value="Amarillo"> Amarillo</label><br>
-      <label><input type="checkbox" name="color" value="Lila"> Lila</label><br>
-      <label><input type="checkbox" name="color" value="Blanco"> Blanco</label><br>
-      <label><input type="checkbox" name="color" value="Café"> Café</label>
-    </div>
+  <div id="coloresChocolate" style="display: none;">
+    <p>Colores disponibles para chocolate:</p>
+    <label><input type="checkbox" name="color[]" value="Azul"> Azul</label>
+    <label><input type="checkbox" name="color[]" value="Rosa"> Rosa</label>
+    <label><input type="checkbox" name="color[]" value="Rojo"> Rojo</label>
+    <label><input type="checkbox" name="color[]" value="Amarillo"> Amarillo</label>
+    <label><input type="checkbox" name="color[]" value="Lila"> Lila</label>
+    <label><input type="checkbox" name="color[]" value="Blanco"> Blanco</label>
+    <label><input type="checkbox" name="color[]" value="Café"> Café</label>
   </div>
 
   <label for="evento">Tipo de evento:</label>
@@ -65,25 +61,22 @@
   <input type="text" id="tematica" name="tematica">
 
   <label for="imagen">Sugerencia de imagen:</label>
-  <input type="file" name="imagen" accept="image/*">
+  <input type="file" id="imagen" name="imagen" accept="image/*">
 
-  <label>Listo:</label>
-  <div class="checkbox-group">
-    <label><input type="checkbox" name="listo" value="curly"> Curly</label>
-    <label><input type="checkbox" name="listo" value="tela"> Tela</label>
-  </div>
+  <p>Listo:</p>
+  <label><input type="checkbox" name="listo[]" value="Curly"> Curly</label>
+  <label><input type="checkbox" name="listo[]" value="Tela"> Tela</label>
 
-  <label>Presentación:</label>
-  <div class="checkbox-group">
-    <label><input type="checkbox" name="presentacion" value="celofan"> Bolsita celofán</label>
-    <label><input type="checkbox" name="presentacion" value="vaso"> Vaso de acrílico</label>
-  </div>
-  
-   <input type="hidden" name="_next" value="https://tusitio.com/gracias.html">
+  <p>Presentación:</p>
+  <label><input type="checkbox" name="presentacion[]" value="Bolsita celofán"> Bolsita celofán</label>
+  <label><input type="checkbox" name="presentacion[]" value="Vaso de acrílico"> Vaso de acrílico</label>
+
+  <!-- Configuración oculta de Formsubmit -->
+  <input type="hidden" name="_next" value="https://tusitio.com/gracias.html">
   <input type="hidden" name="_captcha" value="false">
 
   <button type="submit">Enviar</button>
-</section>
+</form>
 
 <script>
   function toggleColores() {
