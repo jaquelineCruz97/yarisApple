@@ -32,6 +32,7 @@
 
     <!-- Main Section -->
     <main>
+
       <form action="https://formsubmit.co/jaqueline.cruz.97.jc@gmail.com" method="POST" enctype="multipart/form-data">
   <h2>¿Tienes un evento en puerta?</h2>
   <p>Cotiza tus manzanas 🍏</p>
@@ -41,19 +42,19 @@
 
   <label>Sabores:</label>
   <div class="checkbox-group">
-    <label><input type="checkbox" name="sabor[]" value="Tamarindo"> Tamarindo</label>
-    <label><input type="checkbox" name="sabor[]" value="Chocolate" id="chocolateCheckbox" onchange="toggleColores()"> Chocolate</label>
+    <label><input type="radio" name="sabor" value="Tamarindo" onclick="toggleColores(false)"> Tamarindo</label>
+    <label><input type="radio" name="sabor" value="Chocolate" id="chocolateRadio" onclick="toggleColores(true)"> Chocolate</label>
   </div>
 
   <div id="coloresChocolate" style="display: none;">
     <p>Colores disponibles para chocolate:</p>
-    <label><input type="checkbox" name="color[]" value="Azul"> Azul</label><br>
-    <label><input type="checkbox" name="color[]" value="Rosa"> Rosa</label><br>
-    <label><input type="checkbox" name="color[]" value="Rojo"> Rojo</label><br>
-    <label><input type="checkbox" name="color[]" value="Amarillo"> Amarillo</label><br>
-    <label><input type="checkbox" name="color[]" value="Lila"> Lila</label><br>
-    <label><input type="checkbox" name="color[]" value="Blanco"> Blanco</label><br>
-    <label><input type="checkbox" name="color[]" value="Café"> Café</label>
+    <label><input type="radio" name="color" value="Azul"> Azul</label><br>
+    <label><input type="radio" name="color" value="Rosa"> Rosa</label><br>
+    <label><input type="radio" name="color" value="Rojo"> Rojo</label><br>
+    <label><input type="radio" name="color" value="Amarillo"> Amarillo</label><br>
+    <label><input type="radio" name="color" value="Lila"> Lila</label><br>
+    <label><input type="radio" name="color" value="Blanco"> Blanco</label><br>
+    <label><input type="radio" name="color" value="Café"> Café</label>
   </div>
 
   <label for="evento">Tipo de evento:</label>
@@ -66,12 +67,18 @@
   <input type="file" id="imagen" name="imagen" accept="image/*">
 
   <p>Listo:</p>
-  <label><input type="checkbox" name="listo[]" value="Curly"> Curly</label>
-  <label><input type="checkbox" name="listo[]" value="Tela"> Tela</label>
+  <label><input type="radio" name="listo" value="Curly"> Curly</label>
+  <label><input type="radio" name="listo" value="Tela"> Tela</label>
 
   <p>Presentación:</p>
-  <label><input type="checkbox" name="presentacion[]" value="Bolsita celofán"> Bolsita celofán</label>
-  <label><input type="checkbox" name="presentacion[]" value="Vaso de acrílico"> Vaso de acrílico</label>
+  <label><input type="radio" name="presentacion" value="Bolsita celofán"> Bolsita celofán</label>
+  <label><input type="radio" name="presentacion" value="Vaso de acrílico"> Vaso de acrílico</label>
+
+  <label for="especificaciones">Agrega más especificaciones:</label>
+  <textarea id="especificaciones" name="especificaciones" rows="4" placeholder="Escribe aquí cualquier detalle especial..."></textarea>
+
+  <label for="contacto">¿Cómo te contactamos? (Correo o WhatsApp):</label>
+  <input type="text" id="contacto" name="contacto" placeholder="ej. correo@ejemplo.com o 6561234567" required>
 
   <!-- Configuración de FormSubmit -->
   <input type="hidden" name="_next" value="manzanas.html">
@@ -79,16 +86,20 @@
 
   <button type="submit">Enviar</button>
 </form>
-      </main>
-     
 
 <script>
-  function toggleColores() {
-    const checkbox = document.getElementById("chocolateCheckbox");
+  function toggleColores(mostrar) {
     const colores = document.getElementById("coloresChocolate");
-    colores.style.display = checkbox.checked ? "block" : "none";
+    colores.style.display = mostrar ? "block" : "none";
+
+    ocument.getElementById("formManzanas").addEventListener("submit", function () {
+    alert("¡Gracias! Te contactaremos lo más pronto posible.");
+  });
   }
 </script>
+      
+      </main>
+     
         
   <br>
       <!-- Footer -->
