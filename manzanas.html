@@ -67,16 +67,16 @@
   <label for="imagen">Sugerencia de imagen:</label>
   <input type="file" id="imagen" name="imagen" accept="image/*">
 
-  <p>Listo:</p>
-  <label><input type="radio" name="listo" value="Curly" onchange="calcularPrecio()"> Curly</label>
-  <label><input type="radio" name="listo" value="Tela" onchange="calcularPrecio()"> Tela</label>
+  <p>Liston:</p>
+  <label><input type="radio" name="liston" value="Curly" onchange="calcularPrecio()"> Curly</label>
+  <label><input type="radio" name="liston" value="Tela" onchange="calcularPrecio()"> Tela</label>
 
   <p>Presentación:</p>
   <label><input type="radio" name="presentacion" value="Bolsita celofán"> Bolsita celofán</label>
   <label><input type="radio" name="presentacion" value="Vaso de acrílico"> Vaso de acrílico</label>
 
-  <label for="entrega">Fecha y hora del evento:</label>
-<input type="datetime-local" id="entrega" name="entrega" required>
+  <label for="fechayhoraevento">Fecha y hora del evento:</label>
+<input type="datetime-local" id="fechayhoraevento" name="fechayhoraevento" required>
 
   <label for="especificaciones">Agrega más especificaciones:</label>
   <textarea id="especificaciones" name="especificaciones" rows="4" placeholder="Escribe aquí cualquier detalle especial..."></textarea>
@@ -113,10 +113,10 @@
 
 function calcularPrecio() {
   const cantidad = parseInt(document.getElementById('cantidad').value) || 0;
-  const listo = document.querySelector('input[name="listo"]:checked')?.value;
+  const liston = document.querySelector('input[name="liston"]:checked')?.value;
 
   let precioUnitario = cantidad < 25 ? 35 : 30;
-  if (listo === 'Tela') {
+  if (liston === 'Tela') {
     precioUnitario += 5;
   }
 
