@@ -142,6 +142,10 @@ function calcularPrecio() {
     mostrarMensajeDescuento("❌ No aplica descuento por vaso de acrílico", false);
   }
 
+   if (liston === 'Tela' && presentacion === 'Vaso de acrílico' ) {
+    mostrarMensajeDescuento("❌ No aplica descuento por listón de tela y vaso de acrílico", false);
+  }
+
   // Si sí aplica el descuento final
   if (cantidad >= 25 && aplicaDescuento) {
     precioBase -= 5;
