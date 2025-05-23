@@ -145,6 +145,40 @@ body {
   resize: vertical;
 }
 
+.divtotal{
+margin-top: 15px; 
+padding: 10px; 
+border: 1px solid #ccc; 
+background-color: #f5f5f5;
+}
+
+.divnotaaclaratoria{
+  margin-top: 6px; 
+  font-size: 0.9rem; 
+  color: #666;
+}
+
+.btn-enviar {
+  background-color: #4caf50; /* verde */
+  color: white;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.btn-enviar:hover {
+  background-color: #388e3c; /* verde más oscuro */
+}
+
+input[type="radio"] {
+  accent-color: #4caf50; /* verde bonito */
+}
+
 input[type="datetime-local"] {
   width: 100%;
   padding: 8px;
