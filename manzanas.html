@@ -121,29 +121,31 @@ function calcularPrecio() {
   let extra = 0;
   let aplicaDescuento = false;
 
+  // Mostrar primero si cumple la cantidad mínima
+  if (cantidad >= 25) {
+    mostrarMensajeDescuento("✅ Aplica descuento", true);
+    aplicaDescuento = true;
+  } else {
+    mostrarMensajeDescuento("❌ No aplica descuento", false);
+  }
+
+  // Condiciones que cancelan el descuento aunque haya 25 piezas
   if (liston === 'Tela') {
     extra += 5;
     aplicaDescuento = false;
+    mostrarMensajeDescuento("❌ No aplica descuento por listón de tela", false);
   }
 
   if (presentacion === 'Vaso de acrílico') {
     extra += 10;
     aplicaDescuento = false;
+    mostrarMensajeDescuento("❌ No aplica descuento por vaso de acrílico", false);
   }
 
-  if (liston === 'Curly' && presentacion !== 'Vaso de acrílico') {
-    aplicaDescuento = true;
-  }
-
-  if (presentacion === 'Bolsita celofán' && liston !== 'Tela') {
-    aplicaDescuento = true;
-  }
-
+  // Si sí aplica el descuento final
   if (cantidad >= 25 && aplicaDescuento) {
     precioBase -= 5;
     mostrarMensajeDescuento("✅ Descuento aplicado", true);
-  } else {
-    mostrarMensajeDescuento("❌ No aplica descuento", false);
   }
 
   const precioUnitario = precioBase + extra;
