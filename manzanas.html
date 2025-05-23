@@ -104,10 +104,10 @@
 </form>
 
 <script>
-  function toggleColores(mostrar) {
-    const colores = document.getElementById("coloresChocolate");
-    colores.style.display = mostrar ? "block" : "none";
-  }
+ function toggleColores(mostrar) {
+  const colores = document.getElementById("coloresChocolate");
+  colores.style.display = mostrar ? "block" : "none";
+}
 
 function calcularPrecio() {
   const cantidad = parseInt(document.getElementById('cantidad').value) || 0;
@@ -124,9 +124,11 @@ function calcularPrecio() {
   // Actualiza el input oculto para enviar el total por correo
   document.getElementById('totalInput').value = `$${total.toFixed(2)} MXN`;
 }
-  document.getElementById("formManzanas").addEventListener("submit", function () {
-    alert("¡Gracias! Te contactaremos lo más pronto posible.");
-  });
+
+document.getElementById("formManzanas").addEventListener("submit", function (e) {
+  calcularPrecio(); // actualizar el total justo antes de enviar
+  alert("¡Gracias! Te contactaremos lo más pronto posible.");
+});
 </script>
       
       </main>
