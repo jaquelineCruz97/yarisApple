@@ -134,7 +134,25 @@ body {
       margin-top: 10px;
       padding-left: 20px;
     }
-  
+    
+   textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+
+input[type="datetime-local"] {
+  width: 100%;
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
  @media (max-width: 480px) {
   .container {
     padding: 10px;
