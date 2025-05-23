@@ -133,17 +133,13 @@ function calcularPrecio() {
   if (liston === 'Tela') {
     extra += 5;
     aplicaDescuento = false;
-    mostrarMensajeDescuento("❌ No aplica descuento por listón de tela", false);
+    mostrarMensajeDescuento("❌ No aplica descuento", false);
   }
 
   if (presentacion === 'Vaso de acrílico') {
     extra += 10;
     aplicaDescuento = false;
-    mostrarMensajeDescuento("❌ No aplica descuento por vaso de acrílico", false);
-  }
-
-   if (liston === 'Tela' && presentacion === 'Vaso de acrílico' ) {
-    mostrarMensajeDescuento("❌ No aplica descuento por listón de tela y vaso de acrílico", false);
+    mostrarMensajeDescuento("❌ No aplica descuento", false);
   }
 
   // Si sí aplica el descuento final
