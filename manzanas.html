@@ -72,8 +72,8 @@
   <label><input type="radio" name="liston" value="Tela" onchange="calcularPrecio()"> Tela</label>
 
   <p>Presentación:</p>
-  <label><input type="radio" name="presentacion" value="Bolsita celofán"> Bolsita celofán</label>
-  <label><input type="radio" name="presentacion" value="Vaso de acrílico"> Vaso de acrílico</label>
+  <label><input type="radio" name="presentacion" value="Bolsita celofán" onchange="calcularPrecio()"> Bolsita celofán</label>
+  <label><input type="radio" name="presentacion" value="Vaso de acrílico" onchange="calcularPrecio()"> Vaso de acrílico</label>
 
   <label for="fechayhoraevento">Fecha y hora del evento:</label>
 <input type="datetime-local" id="fechayhoraevento" name="fechayhoraevento" required>
@@ -99,6 +99,9 @@
   <input type="hidden" name="_captcha" value="false">
 
   <input type="hidden" name="total" id="totalInput">
+  <p id="precioUnidad" style="font-weight: bold;">$35.00 MXN por manzana</p>
+<p id="mensajeDescuento">❌ No aplica descuento</p>
+
 
   <button type="submit" class="btn-enviar">📩 Enviar cotización</button>
 </form>
@@ -112,43 +115,57 @@
 function calcularPrecio() {
   const cantidad = parseInt(document.getElementById('cantidad').value) || 0;
   const liston = document.querySelector('input[name="liston"]:checked')?.value;
+  const presentacion = document.querySelector('input[name="presentacion"]:checked')?.value;
 
-  let precioUnitario = cantidad < 25 ? 35 : 30;
+  let precioBase = 35; // Precio base por manzana
+  let extra = 0;
+  let aplicaDescuento = false;
+
   if (liston === 'Tela') {
-    precioUnitario += 5;
+    extra += 5;
+    aplicaDescuento = false;
   }
 
-  const total = cantidad * precioUnitario;
-  document.getElementById('precioTotal').textContent = `$${total.toFixed(2)}`;
-
-  // Actualiza el input oculto para enviar el total por correo
-  document.getElementById('totalInput').value = `$${total.toFixed(2)} MXN`;
-}
-
-document.getElementById("formManzanas").addEventListener("submit", function (e) {
-  calcularPrecio(); // actualizar el total justo antes de enviar
-});
-</script>
-      
-<script>
-function toggleColores(mostrar) {
-  const colores = document.getElementById("coloresChocolate");
-  colores.style.display = mostrar ? "block" : "none";
-}
-
-function calcularPrecio() {
-  const cantidad = parseInt(document.getElementById('cantidad').value) || 0;
-  const liston = document.querySelector('input[name="liston"]:checked')?.value;
-
-  let precioUnitario = cantidad < 25 ? 35 : 30;
-  if (liston === 'Tela') {
-    precioUnitario += 5;
+  if (presentacion === 'Vaso de acrílico') {
+    extra += 10;
+    aplicaDescuento = false;
   }
 
+  if (liston === 'Curly' && presentacion !== 'Vaso de acrílico') {
+    aplicaDescuento = true;
+  }
+
+  if (presentacion === 'Bolsita celofán' && liston !== 'Tela') {
+    aplicaDescuento = true;
+  }
+
+  if (cantidad >= 25 && aplicaDescuento) {
+    precioBase -= 5;
+    mostrarMensajeDescuento("✅ Descuento aplicado", true);
+  } else {
+    mostrarMensajeDescuento("❌ No aplica descuento", false);
+  }
+
+  const precioUnitario = precioBase + extra;
   const total = cantidad * precioUnitario;
+
   document.getElementById('precioTotal').textContent = `$${total.toFixed(2)}`;
   document.getElementById('totalInput').value = `$${total.toFixed(2)} MXN`;
+
+  const unidadDisplay = document.getElementById('precioUnidad');
+  if (unidadDisplay) {
+    unidadDisplay.textContent = `$${precioUnitario.toFixed(2)} MXN por manzana`;
+  }
 }
+
+function mostrarMensajeDescuento(mensaje, esDescuento) {
+  const mensajeDiv = document.getElementById('mensajeDescuento');
+  if (mensajeDiv) {
+    mensajeDiv.textContent = mensaje;
+    mensajeDiv.style.color = esDescuento ? 'green' : 'red';
+  }
+}
+
 
 document.getElementById("formManzanas").addEventListener("submit", function (e) {
   e.preventDefault(); // evita el envío tradicional
