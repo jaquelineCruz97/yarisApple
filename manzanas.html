@@ -33,7 +33,7 @@
     <!-- Main Section -->
     <main>
 
-      <form id="formManzanas" action="https://formsubmit.co/jaqueline.cruz.97.jc@gmail.com" method="POST" enctype="multipart/form-data">
+      <form id="formManzanas" enctype="multipart/form-data">
 
   <h2>¿Tienes un evento en puerta?</h2>
   <p>Cotiza tus manzanas 🍏</p>
@@ -131,6 +131,54 @@ document.getElementById("formManzanas").addEventListener("submit", function (e) 
 });
 </script>
       
+<script>
+function toggleColores(mostrar) {
+  const colores = document.getElementById("coloresChocolate");
+  colores.style.display = mostrar ? "block" : "none";
+}
+
+function calcularPrecio() {
+  const cantidad = parseInt(document.getElementById('cantidad').value) || 0;
+  const liston = document.querySelector('input[name="liston"]:checked')?.value;
+
+  let precioUnitario = cantidad < 25 ? 35 : 30;
+  if (liston === 'Tela') {
+    precioUnitario += 5;
+  }
+
+  const total = cantidad * precioUnitario;
+  document.getElementById('precioTotal').textContent = `$${total.toFixed(2)}`;
+  document.getElementById('totalInput').value = `$${total.toFixed(2)} MXN`;
+}
+
+document.getElementById("formManzanas").addEventListener("submit", function (e) {
+  e.preventDefault(); // evita el envío tradicional
+
+  calcularPrecio(); // asegúrate que el total esté actualizado
+
+  const form = e.target;
+  const formData = new FormData(form);
+
+  fetch("https://formsubmit.co/jaqueline.cruz.97.jc@gmail.com", {
+    method: "POST",
+    body: formData
+  })
+  .then(response => {
+    if (response.ok) {
+      alert("¡Gracias! Te contactaremos lo más pronto posible.");
+      form.reset(); // borra los datos del formulario
+      document.getElementById('precioTotal').textContent = "$0.00"; // reinicia el total
+      toggleColores(false); // oculta colores de chocolate
+    } else {
+      alert("Error al enviar la cotización. Intenta nuevamente.");
+    }
+  })
+  .catch(error => {
+    alert("Hubo un problema. Intenta de nuevo más tarde.");
+    console.error("Error al enviar el formulario:", error);
+  });
+});
+</script>
       </main>
      
         
