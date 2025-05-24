@@ -31,15 +31,29 @@
 
 
     <!-- Main Section -->
-    <main>
+    <main class="seccion-principal">
+  <div class="info-lado">
+    <h3>Manzanas decoradas para eventos especiales 🍏</h3>
+    <p>Personalizamos tus pedidos con temática, colores y presentación.</p>
+    <p>¡Cotiza fácilmente aquí al lado!</p>
+    <br>
+  <div class="manzanasTamarindo">
+    <h4>Manzanas de tamarindo:</h4>
+    
+    
+  </div>
+  </div>
 
+  <div class="form-lado">
+
+       <!-- FORMULARIO PARA COTIZACIÓN DE MANZANAS -->
       <!-- Campo oculto para enviar la presentación -->
 <input type="hidden" name="presentacionSeleccionada" id="presentacionSeleccionada">
 
 <form id="formManzanas" enctype="multipart/form-data">
 
   <h2>¿Tienes un evento en puerta?</h2>
-  <p>Cotiza tus manzanas 🍏</p>
+  <p class="pcotiza">Cotiza tus manzanas 🍏</p>
 
   <label for="cantidad">Cantidad:</label>
   <input type="number" id="cantidad" name="cantidad" required oninput="calcularPrecio()">
@@ -70,13 +84,17 @@
   <label for="imagen">Sugerencia de imagen:</label>
   <input type="file" id="imagen" name="imagen" accept="image/*">
 
-  <p>Liston:</p>
+  <label>Liston:</label>
+  <div class="checkbox-group">
   <label><input type="radio" name="liston" value="Curly" onchange="calcularPrecio()"> Curly</label>
   <label><input type="radio" name="liston" value="Tela" onchange="calcularPrecio()"> Tela</label>
-
-  <p>Presentación:</p>
+  </div>
+  
+  <label>Presentación:</label>
+  <div class="checkbox-group">
   <label><input type="radio" name="presentacion" value="Bolsita celofán" onchange="calcularPrecio()"> Bolsita celofán</label>
   <label><input type="radio" name="presentacion" value="Vaso de acrílico" onchange="calcularPrecio()"> Vaso de acrílico</label>
+  </div>
 
   <label for="fechayhoraevento">Fecha y hora del evento:</label>
   <input type="datetime-local" id="fechayhoraevento" name="fechayhoraevento" required>
@@ -99,7 +117,9 @@
 
   <button type="submit" class="btn-enviar">📩 Enviar cotización</button>
 </form>
-
+ </form>
+  </div>
+</main>
 <script>
 function toggleColores(mostrar) {
   const colores = document.getElementById("coloresChocolate");
@@ -204,9 +224,7 @@ if (saborSeleccionado.value === "Chocolate" && !colorChocolate) {
     console.error("Error al enviar el formulario:", error);
   });
 });
-</script>
-      </main>
-     
+</script>  
         
   <br>
       <!-- Footer -->
