@@ -23,10 +23,9 @@
   }
   
   .logo {
-    width: 20vh;               /* Tamaño del logo */
+    width: 25vh;               /* Tamaño del logo */
     height: auto;
     margin-bottom: 10px;        /* Espacio entre logo y texto */
-    
   }
   /* Estilo de Header */
   
@@ -238,7 +237,6 @@ footer .social-icons a:hover img {
 body {
       font-family: 'Montserrat', sans-serif;
       background-color: #f2f2f2;
-      padding: 20px;
     }
     
     form {
