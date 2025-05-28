@@ -93,24 +93,29 @@ position: sticky;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
-    .manzanasTrabajos {
+.manzanasTrabajos {
   column-count: 2;
   column-gap: 1rem;
-  margin-top: 1rem;
+  padding: 1rem;
+  max-width: 1000px;
+  margin: auto;
 }
 
 .manzanasTrabajos img {
   width: 100%;
   margin-bottom: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transition: transform 0.3s;
-  break-inside: avoid; /* Para evitar que se corten en columnas */
+  break-inside: avoid;
+  cursor: pointer;
 }
 
 .manzanasTrabajos img:hover {
-  transform: scale(1.05);
-} 
+  transform: scale(1.03);
+}
+
+
     button {
       padding: 10px 20px;
       background-color: #4caf50;
@@ -128,45 +133,44 @@ position: sticky;
 
     /* Modal */
     .modal {
-  display: none;
-  position: fixed;
-  z-index: 10;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow-y: auto;
-  background-color: rgba(0,0,0,0.8);
-  padding: 2rem;
-}
+      display: none;
+      position: fixed;
+      z-index: 10;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      background-color: rgba(0,0,0,0.8);
+      padding: 2rem;
+    }
 
-.modal-content {
-  background-color: #fff;
-  margin: auto;
-  padding: 1rem;
-  border-radius: 12px;
-  max-width: 1000px;
-}
+    .modal-content {
+      background-color: #fff;
+      margin: auto;
+      padding: 1rem;
+      border-radius: 12px;
+      max-width: 1000px;
+    }
 
-/* Galería estilo Pinterest */
-.galeria {
-  column-count: 2;
-  column-gap: 1rem;
-  margin-top: 1rem;
-}
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
 
-.galeria img {
-  width: 100%;
-  margin-bottom: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  transition: transform 0.3s;
-  break-inside: avoid; /* Para evitar que se corten en columnas */
-}
+    .galeria img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
 
-.galeria img:hover {
-  transform: scale(1.05);
-}
+    .galeria img:hover {
+      transform: scale(1.05);
+    }
 
     .close {
       float: right;
@@ -179,6 +183,39 @@ position: sticky;
     .close:hover {
       color: red;
     }
+
+    .galeria {
+  column-count: 2;
+  column-gap: 1rem;
+  margin-top: 1rem;
+    }
+
+  .galeria img {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+  break-inside: avoid; /* Evita que las imágenes se corten entre columnas */
+}
+
+.galeria img:hover {
+  transform: scale(1.05);
+}
+
+.galeria img {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+  break-inside: avoid; /* Evita que las imágenes se corten entre columnas */
+}
+
+.galeria img:hover {
+  transform: scale(1.05);
+}
+
     /* Estilo de Footer */
   footer {
     background-color: #015826; 
@@ -313,6 +350,7 @@ input[type="datetime-local"] {
   border-radius: 4px;
   box-sizing: border-box;
 }
+
  @media (max-width: 480px) {
   .container {
     padding: 10px;
@@ -331,6 +369,15 @@ input[type="datetime-local"] {
   nav ul li a {
     font-size: 0.9rem;
     padding: 5px 12px;
+  }
+
+   .galeria
+   {
+    column-count: 1;
+  }
+
+  .manzanasTrabajos{
+    column-count: 1;
   }
 }
 
@@ -351,6 +398,14 @@ input[type="datetime-local"] {
   nav ul li a {
     font-size: 1rem;
     padding: 6px 14px;
+  }
+
+   .galeria {
+    column-count: 2;
+  }
+
+  .manzanasTrabajos{
+    column-count: 2;
   }
 
 }
