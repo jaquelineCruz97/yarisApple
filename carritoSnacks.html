@@ -31,10 +31,28 @@
 
 
     <!-- Main Section -->
-    <main>
+    <main class="seccion-principal">
+  <div class="info-lado">
+    <h3>Carrito de Snacks para todo tipo de evento. 🍏</h3>
+    <p>¡Cotiza tu carrito fácil y rápido!</p>
+    <br>
+  </div>
+ 
+  <div class="form-lado">
+      <form action="#" method="post">
+    <label for="producto">Selecciona una categoría:</label>
+    <select name="producto" id="producto" required>
+      <option value="">-- Selecciona una opción --</option>
+      <option value="snacks">Snacks</option>
+      <option value="paletas-lokas">Paletas Lokas</option>
+      <option value="chocoletas">Chocoletas</option>
+      <option value="preparados">Preparados</option>
+    </select>
 
-     </main>
-        
+    <input type="submit" value="Enviar">
+  </form>
+  </div>
+    </main>
   <br>
       <!-- Footer -->
       <footer>
@@ -49,5 +67,11 @@
   </div>
   <p>&copy; 2025 Yari´s Apple</p>
 </footer>
+  <script>
+  document.addEventListener("contextmenu", function(e) {
+    e.preventDefault();
+  });
+</script>
+
     </body>
     </html>
