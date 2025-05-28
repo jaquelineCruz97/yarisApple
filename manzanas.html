@@ -33,17 +33,57 @@
     <!-- Main Section -->
     <main class="seccion-principal">
   <div class="info-lado">
-    <h3>Manzanas decoradas para eventos especiales 🍏</h3>
-    <p>Personalizamos tus pedidos con temática, colores y presentación.</p>
-    <p>¡Cotiza fácilmente aquí al lado!</p>
+    <h3>Manzanas personalizadas para todo tipo de evento. 🍏</h3>
+    <p>Variedad de colores y la temática de tu elección la tenemos aquí en Yari´s Apple</p>
+    <p>¡Cotiza tu pedido fácil y rápido!</p>
     <br>
-  <div class="manzanasTamarindo">
-    <h4>Manzanas de tamarindo:</h4>
-    
-    
+
+    <div class="manzanasTrabajosP">
+    <img src="https://i.postimg.cc/HkQRzF9J/Whats-App-Image-2025-05-27-at-7-40-57-PM.jpg" alt="ImagenPrincipal">
+  </div>
+  <div class="manzanasTrabajos">
+    <img src="https://i.postimg.cc/Y9ZBZYGj/Whats-App-Image-2025-05-27-at-7-43-25-PM.jpg" alt="Imagen 1">
+    <img src="https://i.postimg.cc/15zDJF0D/WhatsApp_Image_2025-05-27_at_7.29.28_PM_(1).jpg" alt="Imagen 2">
+    <img src="https://i.postimg.cc/XYGd00zJ/WhatsApp_Image_2025-05-27_at_7.29.25_PM_(1).jpg" alt="Imagen 3">
+    <img src="https://i.postimg.cc/TYHgSPQF/WhatsApp_Image_2025-05-27_at_7.29.25_PM_(2).jpg" alt="Imagen 4">
+  </div>
+
+  <button onclick="abrirGaleria()">Ver Galería</button>
+
+  <!-- Galería Modal -->
+  <div id="galeriaModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="cerrarGaleria()">&times;</span>
+      <h2>Galería de Imágenes</h2>
+      <div class="galeria">
+        <img src="https://via.placeholder.com/400x300?text=1" alt="Imagen 1">
+        <img src="https://via.placeholder.com/400x300?text=2" alt="Imagen 2">
+        <img src="https://via.placeholder.com/400x300?text=3" alt="Imagen 3">
+        <img src="https://via.placeholder.com/400x300?text=4" alt="Imagen 4">
+        <img src="https://via.placeholder.com/400x300?text=5" alt="Imagen 5">
+        <img src="https://via.placeholder.com/400x300?text=6" alt="Imagen 6">
+      </div>
+    </div>
   </div>
   </div>
 
+  <script>
+    function abrirGaleria() {
+      document.getElementById("galeriaModal").style.display = "block";
+    }
+
+    function cerrarGaleria() {
+      document.getElementById("galeriaModal").style.display = "none";
+    }
+
+    // Cerrar si se hace clic fuera del contenido
+    window.onclick = function(event) {
+      const modal = document.getElementById("galeriaModal");
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
   <div class="form-lado">
 
        <!-- FORMULARIO PARA COTIZACIÓN DE MANZANAS -->
