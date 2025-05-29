@@ -73,7 +73,7 @@ position: sticky;
 
   .info-lado {
   flex: 1 1 300px; /* crece, encoge, base de 300px */
-  max-width: 400px;
+  max-width: 600px;
   padding: 20px;
   font-size: 18px;
   box-sizing: border-box;
