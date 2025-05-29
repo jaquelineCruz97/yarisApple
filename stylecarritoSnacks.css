@@ -74,15 +74,16 @@ position: sticky;
   .info-lado {
   flex: 1 1 300px; /* crece, encoge, base de 300px */
   max-width: 600px;
-  padding: 20px;
   font-size: 18px;
   box-sizing: border-box;
   justify-items: center;
+  gap: 20px;
 }
 
-.info-lado h4{
-  color:rgb(6, 87, 23);
+.info-lado h3{
   text-align: center;
+      color: #015826; 
+      margin-bottom: 30px;
 }
 
 .info-lado p{
@@ -90,7 +91,7 @@ position: sticky;
 }
 
 .info-lado img{
-  height: 350px;
+  height: 300px;
       width: auto;
       object-fit: cover;
       cursor: pointer;
@@ -232,7 +233,8 @@ footer .social-icons a img {
 footer .social-icons a:hover img {
   transform: scale(1.2);
 }
-    h2 {
+ 
+h3 {
       text-align: center;
       color: #015826; 
       margin-bottom: 30px;
