@@ -33,26 +33,72 @@
     <!-- Main Section -->
     <main class="seccion-principal">
   <div class="info-lado">
-    <h3>Carrito de Snacks para todo tipo de evento. 🍏</h3>
+    <h4>Carrito de Snacks para todo tipo de evento. 🍏</h4>
     <p>¡Cotiza tu carrito fácil y rápido!</p>
     <br>
+    <div class="imgLado">
+    <img src="https://i.postimg.cc/CKMZb0JM/Whats-App-Image-2025-05-28-at-1-54-30-PM-3.jpg" alt="carrito"> 
+    </div>
   </div>
  
   <div class="form-lado">
-      <form action="#" method="post">
-    <label for="producto">Selecciona una categoría:</label>
-    <select name="producto" id="producto" required>
-      <option value="">-- Selecciona una opción --</option>
-      <option value="snacks">Snacks</option>
-      <option value="paletas-lokas">Paletas Lokas</option>
-      <option value="chocoletas">Chocoletas</option>
-      <option value="preparados">Preparados</option>
-    </select>
+     <h2>¡Cotiza tu carrito fácil y rápido aquí!</h2>
 
-    <input type="submit" value="Enviar">
-  </form>
+  <div class="galeriaOpc">
+    
+    <div class="producto">
+      <img src="https://i.postimg.cc/K8wXD8vm/WhatsApp_Image_2025-05-28_at_1.54.29_PM.jpg" alt="Snacks" data-producto="Snacks">
+      <div class="nombre-producto">Snacks</div>
+      </div>
+    <div class="producto">
+      <img src="https://i.postimg.cc/hP4qSY5R/WhatsApp_Image_2025-05-28_at_1.54.31_PM.jpg" alt="Paletas Lokas" data-producto="Paletas Lokas">
+      <div class="nombre-producto">Paletas Lokas</div>
+    </div>
+    <div class="producto">
+       <img src="https://i.postimg.cc/Mpv2BQws/WhatsApp_Image_2025-05-28_at_1.54.30_PM.jpg" alt="Chocoletas" data-producto="Chocoletas">
+      <div class="nombre-producto">Chocoletas</div>
+    </div>
+    <div class="producto">
+      <img src="https://i.postimg.cc/y6yHCKnT/WhatsApp_Image_2025-05-28_at_1.54.30_PM_(1).jpg" alt="Preparados" data-producto="Preparados">
+      <div class="nombre-producto">Preparados</div>
+    </div>
   </div>
-    </main>
+
+  <!-- Modal -->
+  <div id="modalOpcFormulario" class="modalOpc">
+    <div class="modalOpc-content">
+      <span class="close" id="cerrarModalOpc">&times;</span>
+      <h3>Formulario de Pedido</h3>
+      <form>
+        <input type="text" placeholder="Tu nombre" required>
+        <input type="tel" placeholder="Tu teléfono" required>
+        <input type="text" id="productoSeleccionado" placeholder="Producto" readonly>
+        <button type="submit">Enviar Pedido</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const imagenes = document.querySelectorAll('.galeriaOpc img');
+    const modal = document.getElementById('modalOpcFormulario');
+    const cerrar = document.getElementById('cerrarModalOpc');
+    const productoInput = document.getElementById('productoSeleccionado');
+
+    imagenes.forEach(img => {
+      img.addEventListener('click', () => {
+        const producto = img.getAttribute('data-producto');
+        productoInput.value = producto;
+        modal.style.display = "block";
+      });
+    });
+
+    cerrar.onclick = () => modal.style.display = "none";
+    window.onclick = (e) => {
+      if (e.target === modal) modal.style.display = "none";
+    };
+  </script>
+  </div>
+    </main> 
   <br>
       <!-- Footer -->
       <footer>
