@@ -10,6 +10,7 @@
   background-image: url(https://i.postimg.cc/prqBGR0N/watercolour-green-background.jpg);
   background-size: cover;
   background-attachment: fixed;
+    font-family: 'Montserrat', sans-serif;
   }
   
   /* Contenedor principal */
@@ -60,6 +61,77 @@ position: sticky;
     color: white;
   }
   
+
+
+
+
+  /* Main */
+ .form-contacto {
+    width: 100%;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .form-contacto label {
+    font-weight: bold;
+    color: #015826;
+  }
+
+  .form-contacto input,
+  .form-contacto textarea {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .form-contacto textarea {
+    resize: none;
+  }
+
+  .botones-formulario {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .botones-formulario button {
+    flex: 1;
+    padding: 12px 16px;
+    background-color: #015826;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+
+  .botones-formulario button:hover {
+    background-color: #045024;
+  }
+
+  .titulo-contacto {
+    color: #015826;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .subtitulo-contacto {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+  }
 
     /* Estilo de Footer */
   footer {

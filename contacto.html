@@ -31,11 +31,50 @@
 
 
     <!-- Main Section -->
-    <main>
 
-     </main>
-        
-  <br>
+   
+    <main class="container">
+  <h2 class="titulo-contacto">Contáctanos</h2>
+  <p class="subtitulo-contacto">¿Tienes alguna duda o quieres saber más sobre nuestros servicios? ¡Escríbenos!</p>
+
+  <form class="form-contacto" id="formContacto" action="https://formsubmit.co/jaqueline.cruz.97.jc%40gmail.com" method="POST">
+  <label for="nombre">Nombre</label>
+  <input type="text" id="nombre" name="name" placeholder="Tu nombre completo" required>
+
+  <label for="contacto">Correo electrónico o número de WhatsApp</label>
+  <input type="text" id="contacto" name="contacto" placeholder="tucorreo@ejemplo.com o 6561234567" required>
+
+  <label for="mensaje">Mensaje</label>
+  <textarea id="mensaje" name="message" rows="5" placeholder="Escribe tu mensaje..." required></textarea>
+
+  <!-- Obligatorio para FormSubmit -->
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_next" value="https://google.com">
+
+  <div class="botones-formulario">
+    <button type="submit">Enviar por Correo</button>
+    <button type="button" id="btnWhatsapp">Enviar por WhatsApp</button>
+  </div>
+</form>
+
+  </form>
+</main>
+
+<script>
+  document.getElementById('btnWhatsapp').addEventListener('click', () => {
+    const nombre = document.getElementById('nombre').value;
+    const contacto = document.getElementById('contacto').value;
+    const mensaje = document.getElementById('mensaje').value;
+
+    const numeroDestino = "5216565285127"; // ← Cambia este número
+    const texto = `Hola, soy ${nombre}. Mi contacto es: ${contacto}. Mensaje: ${mensaje}`;
+    const whatsappURL = `https://wa.me/${numeroDestino}?text=${encodeURIComponent(texto)}`;
+
+    window.open(whatsappURL, '_blank');
+    document.getElementById('formContacto').reset();
+  });
+</script>
+
       <!-- Footer -->
       <footer>
   <p>Síguenos en nuestras redes sociales:</p>

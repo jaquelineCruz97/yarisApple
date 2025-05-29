@@ -202,8 +202,13 @@ position: sticky;
     button:hover {
       background-color: #45a049;
     }
+ 
+h3 {
+      text-align: center;
+      color: #015826; 
+      margin-bottom: 30px;
+    }
 
-    
     /* Estilo de Footer */
   footer {
     background-color: #015826; 
@@ -233,13 +238,6 @@ footer .social-icons a img {
 footer .social-icons a:hover img {
   transform: scale(1.2);
 }
- 
-h3 {
-      text-align: center;
-      color: #015826; 
-      margin-bottom: 30px;
-    }
-
 
 
 
