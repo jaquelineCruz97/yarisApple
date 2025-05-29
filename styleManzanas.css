@@ -4,6 +4,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0,0,0,0); /* Compatibilidad */
   }
 
   body{
@@ -43,6 +45,7 @@ position: sticky;
   
   nav ul li {
     list-style: none;
+
   }
   
   nav ul li a {

@@ -71,34 +71,76 @@
     <div class="modalOpc-content">
       <span class="close" id="cerrarModalOpc">&times;</span>
       <h3>Formulario de Pedido</h3>
-      <form>
-        <input type="text" placeholder="Tu nombre" required>
-        <input type="tel" placeholder="Tu teléfono" required>
-        <input type="text" id="productoSeleccionado" placeholder="Producto" readonly>
-        <button type="submit">Enviar Pedido</button>
-      </form>
+      <form id="formularioPedido">
+  <input type="text" placeholder="Tu nombre" required>
+  <input type="tel" placeholder="Tu teléfono" required>
+  <input type="text" id="productoSeleccionado" placeholder="Producto" readonly>
+
+  <!-- Campos específicos por producto -->
+  <div id="camposSnacks" class="campos-especificos" style="display: none;">
+    <input type="number" placeholder="Cantidad de snacks" required>
+    <select>
+      <option disabled selected>Tipo de snack</option>
+      <option value="Dulces">Dulces</option>
+      <option value="Salados">Salados</option>
+      <option value="Mixtos">Mixtos</option>
+    </select>
+  </div>
+
+  <div id="camposPaletas" class="campos-especificos" style="display: none;">
+    <input type="number" placeholder="Cantidad de paletas" required>
+    <input type="text" placeholder="Sabor preferido">
+  </div>
+
+  <div id="camposChocoletas" class="campos-especificos" style="display: none;">
+    <input type="number" placeholder="Cantidad de chocoletas" required>
+  </div>
+
+  <div id="camposPreparados" class="campos-especificos" style="display: none;">
+    <textarea placeholder="¿Qué tipo de preparados deseas?" rows="3"></textarea>
+  </div>
+
+  <button type="submit">Enviar Pedido</button>
+</form>
+
     </div>
   </div>
 
-  <script>
-    const imagenes = document.querySelectorAll('.galeriaOpc img');
-    const modal = document.getElementById('modalOpcFormulario');
-    const cerrar = document.getElementById('cerrarModalOpc');
-    const productoInput = document.getElementById('productoSeleccionado');
+<script>
+  const elementosClickables = document.querySelectorAll('.galeriaOpc img, .galeriaOpc .nombre-producto');
+  const modal = document.getElementById('modalOpcFormulario');
+  const cerrar = document.getElementById('cerrarModalOpc');
+  const productoInput = document.getElementById('productoSeleccionado');
 
-    imagenes.forEach(img => {
-      img.addEventListener('click', () => {
-        const producto = img.getAttribute('data-producto');
-        productoInput.value = producto;
-        modal.style.display = "block";
-      });
+  const camposEspecificos = {
+    "Snacks": document.getElementById("camposSnacks"),
+    "Paletas Lokas": document.getElementById("camposPaletas"),
+    "Chocoletas": document.getElementById("camposChocoletas"),
+    "Preparados": document.getElementById("camposPreparados")
+  };
+
+  function ocultarTodosLosCampos() {
+    Object.values(camposEspecificos).forEach(div => div.style.display = "none");
+  }
+
+  elementosClickables.forEach(el => {
+    el.addEventListener('click', () => {
+      const producto = el.getAttribute('data-producto') || el.previousElementSibling.getAttribute('data-producto');
+      productoInput.value = producto;
+      ocultarTodosLosCampos();
+      if (camposEspecificos[producto]) {
+        camposEspecificos[producto].style.display = "block";
+      }
+      modal.style.display = "block";
     });
+  });
 
-    cerrar.onclick = () => modal.style.display = "none";
-    window.onclick = (e) => {
-      if (e.target === modal) modal.style.display = "none";
-    };
-  </script>
+  cerrar.onclick = () => modal.style.display = "none";
+  window.onclick = (e) => {
+    if (e.target === modal) modal.style.display = "none";
+  };
+</script>
+
   </div>
     </main> 
   <br>
