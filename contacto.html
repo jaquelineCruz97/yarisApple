@@ -37,7 +37,7 @@
   <h2 class="titulo-contacto">Contáctanos</h2>
   <p class="subtitulo-contacto">¿Tienes alguna duda o quieres saber más sobre nuestros servicios? ¡Escríbenos!</p>
 
-  <form class="form-contacto" id="formContacto" action="https://formsubmit.co/jaqueline.cruz.97.jc%40gmail.com" method="POST">
+ <form class="form-contacto" id="formContacto" action="https://formsubmit.co/jaqueline.cruz.97.jc%40gmail.com" method="POST">
   <label for="nombre">Nombre</label>
   <input type="text" id="nombre" name="name" placeholder="Tu nombre completo" required>
 
@@ -47,9 +47,7 @@
   <label for="mensaje">Mensaje</label>
   <textarea id="mensaje" name="message" rows="5" placeholder="Escribe tu mensaje..." required></textarea>
 
-  <!-- Obligatorio para FormSubmit -->
   <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_next" value="https://google.com">
 
   <div class="botones-formulario">
     <button type="submit">Enviar por Correo</button>
@@ -57,23 +55,65 @@
   </div>
 </form>
 
-  </form>
-</main>
+<div id="mensajeEnvio" style="display:none; color: green; margin-top: 15px; font-weight: bold;"></div>
 
 <script>
+  const form = document.getElementById('formContacto');
+  const mensajeEnvio = document.getElementById('mensajeEnvio');
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault(); // evitar recarga
+
+    // Construir datos para enviar
+    const formData = new FormData(form);
+
+    // Enviar datos por fetch a FormSubmit
+    fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        // Limpiar formulario
+        form.reset();
+
+        // Mostrar mensaje
+        mensajeEnvio.textContent = 'Mensaje enviado correctamente';
+        mensajeEnvio.style.display = 'block';
+
+        // Opcional: ocultar mensaje después de 5 segundos
+        setTimeout(() => {
+          mensajeEnvio.style.display = 'none';
+        }, 5000);
+      } else {
+        return response.json().then(data => {
+          throw new Error(data.error || 'Error al enviar mensaje');
+        });
+      }
+    })
+    .catch(error => {
+      alert('Error: ' + error.message);
+    });
+  });
+
+  // Código WhatsApp (igual que antes)
   document.getElementById('btnWhatsapp').addEventListener('click', () => {
     const nombre = document.getElementById('nombre').value;
     const contacto = document.getElementById('contacto').value;
     const mensaje = document.getElementById('mensaje').value;
 
-    const numeroDestino = "5216565285127"; // ← Cambia este número
+    const numeroDestino = "5216565285127"; // Cambia este número
     const texto = `Hola, soy ${nombre}. Mi contacto es: ${contacto}. Mensaje: ${mensaje}`;
     const whatsappURL = `https://wa.me/${numeroDestino}?text=${encodeURIComponent(texto)}`;
 
     window.open(whatsappURL, '_blank');
-    document.getElementById('formContacto').reset();
+    form.reset();
   });
 </script>
+    </main>
 
       <!-- Footer -->
       <footer>
