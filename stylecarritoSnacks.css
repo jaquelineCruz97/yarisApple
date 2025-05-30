@@ -261,6 +261,18 @@ footer .social-icons a:hover img {
     font-size: 0.9rem;
     padding: 5px 12px;
   }
+
+   .producto, .nombre-producto {
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.producto:active, .nombre-producto:active {
+  transform: scale(0.97);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2);
+}
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
@@ -281,5 +293,17 @@ footer .social-icons a:hover img {
     font-size: 1rem;
     padding: 6px 14px;
   }
+
+   .producto, .nombre-producto {
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.producto:active, .nombre-producto:active {
+  transform: scale(0.97);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2);
+}
 
 }
