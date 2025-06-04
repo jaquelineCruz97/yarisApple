@@ -16,17 +16,31 @@
       <a href="index.html"><img src="https://i.postimg.cc/L6Qc1kBT/yarislogo.png" alt="logoYarisApple" class="logo" /></a>
     </section>
 
-      <section class="navbar">
-      <nav>
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="manzanas.html">Manzanas</a></li>
-          <li><a href="carritoSnacks.html">Carrito de snacks</a></li>
-          <li><a href="otrosServicios.html">Otros servicios</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-      </nav>
-    </section>
+     <section class="navbar">
+  <nav>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div> <!-- Icono de menú -->
+
+    <ul class="menu" id="menu">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="manzanas.html">Manzanas</a></li>
+      <li><a href="carritoSnacks.html">Carrito de snacks</a></li>
+      <li><a href="otrosServicios.html">Otros servicios</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+</section>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu');
+
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('show');
+  });
+</script>
+
+
+
   </header>
 
 
@@ -68,7 +82,7 @@
     <a href="https://www.facebook.com/yaris.apple" target="_blank" aria-label="Facebook">
       <img src="https://cdn-icons-png.flaticon.com/512/20/20837.png" alt="Facebook">
     </a>
-    <a href="https://www.tiktok.com/@biancayarimecruzc?_t=ZS-8wWzFveMgUq&_r=1" target="_blank" aria-label="TikTok">
+    <a href="https://www.tiktok.com/@yarimecc" target="_blank" aria-label="TikTok">
       <img src="https://cdn-icons-png.flaticon.com/512/3046/3046120.png" alt="TikTok">
     </a>
   </div>

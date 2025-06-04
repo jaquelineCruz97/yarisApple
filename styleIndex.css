@@ -61,6 +61,15 @@ position: sticky;
     background-color: #045024;
     color: white;
   }
+
+    /* Botón hamburguesa (oculto en escritorio) */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: #015826;
+  cursor: pointer;
+  padding: 10px;
+}
   
 
   main {
@@ -174,17 +183,22 @@ footer .social-icons a:hover img {
     max-width: 180px;
   }
 
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-    padding: 1vh;
-   }
-
-  nav ul li a {
-    font-size: 0.9rem;
-    padding: 5px 12px;
+  .menu-toggle {
+    display: block;
+    text-align: right;
   }
 
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    display: none; /* Ocultamos por defecto */
+    padding: 20px 0;
+  }
+
+  nav ul.show {
+    display: flex; /* Mostramos cuando se activa */
+  }
   
   
   main {
