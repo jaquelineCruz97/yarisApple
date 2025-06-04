@@ -32,8 +32,9 @@
   }
   /* Estilo de Header */
   
-  nav ul {
-position: sticky;
+ /* Estilos generales del menú */
+nav ul {
+  position: sticky;
   top: 0;
   z-index: 1000;
   padding: 3vh;
@@ -41,27 +42,37 @@ position: sticky;
   justify-content: center;
   gap: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-   font-family: 'Montserrat', sans-serif;
-  }
-  
-  nav ul li {
-    list-style: none;
-  }
-  
-  nav ul li a {
-    text-decoration: none;
-    color: #015826; 
-    font-size: 1.1rem;
-    padding: 8px 20px;
-    border-radius: 30px;
-    transition: background-color 0.3s ease;
-  }
-  
-  nav ul li a:hover {
-    background-color: #045024;
-    color: white;
-  }
-  
+  font-family: 'Montserrat', sans-serif;
+  background-color: white; /* Asegura fondo en sticky */
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #015826;
+  font-size: 1.1rem;
+  padding: 8px 20px;
+  border-radius: 30px;
+  transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #045024;
+  color: white;
+}
+
+/* Botón hamburguesa (oculto en escritorio) */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: #015826;
+  cursor: pointer;
+  padding: 10px;
+}
+
   .seccion-principal {
   display: flex;
   justify-content: center;
@@ -376,15 +387,25 @@ footer .social-icons a:hover img {
     max-width: 180px;
   }
 
+  nav {
+    position: relative;
+  }
+
+  .menu-toggle {
+    display: block;
+    text-align: right;
+  }
+
   nav ul {
     flex-direction: column;
+    align-items: center;
     gap: 10px;
-    padding: 1vh;
-   }
+    display: none; /* Ocultamos por defecto */
+    padding: 20px 0;
+  }
 
-  nav ul li a {
-    font-size: 0.9rem;
-    padding: 5px 12px;
+  nav ul.show {
+    display: flex; /* Mostramos cuando se activa */
   }
 
    .producto, .nombre-producto {

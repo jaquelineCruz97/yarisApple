@@ -6,7 +6,6 @@
   <title>Yari's Apple</title>
   <link rel="stylesheet" href="stylecarritoSnacks.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
@@ -16,17 +15,21 @@
       <a href="index.html"><img src="https://i.postimg.cc/L6Qc1kBT/yarislogo.png" alt="logoYarisApple" class="logo" /></a>
     </section>
 
-      <section class="navbar">
-      <nav>
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="manzanas.html">Manzanas</a></li>
-          <li><a href="carritoSnacks.html">Carrito de snacks</a></li>
-          <li><a href="otrosServicios.html">Otros servicios</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-      </nav>
-    </section>
+   <section class="navbar">
+  <nav>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div> <!-- Icono de menú -->
+
+    <ul class="menu" id="menu">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="manzanas.html">Manzanas</a></li>
+      <li><a href="carritoSnacks.html">Carrito de snacks</a></li>
+      <li><a href="otrosServicios.html">Otros servicios</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+</section>
+
+
   </header>
 
 
@@ -69,10 +72,16 @@
   />
   <div class="nombre-producto" id="btnPaletasText">Paletas Lokas</div>
 </div>
-    <div class="producto">
-       <img src="https://i.postimg.cc/Mpv2BQws/WhatsApp_Image_2025-05-28_at_1.54.30_PM.jpg" alt="Chocoletas" data-producto="Chocoletas">
-      <div class="nombre-producto">Chocoletas</div>
-    </div>
+
+<div class="producto">
+  <img
+    src= "https://i.postimg.cc/Mpv2BQws/WhatsApp_Image_2025-05-28_at_1.54.30_PM.jpg"
+    alt="Chocoretas"
+    data-producto="Chocoretas"
+    id="btnChocoretas"
+  />
+  <div class="nombre-producto" id="btnChocoretasText">Chocoretas</div>
+</div>
     <div class="producto">
       <img src="https://i.postimg.cc/y6yHCKnT/WhatsApp_Image_2025-05-28_at_1.54.30_PM_(1).jpg" alt="Preparados" data-producto="Preparados">
       <div class="nombre-producto">Preparados</div>
@@ -274,14 +283,14 @@
         <div class="checkbox-group bases">
           <label><input type="checkbox" name="bases" value="fresa" /> Fresa</label>
           <label><input type="checkbox" name="bases" value="limón" /> Limón</label>
-          <label><input type="checkbox" name="bases" value="limón con chamoy" /> Limón con chamoy</label>
+          <label><input type="checkbox" name="bases" value="limón con chamoy" /> Limón/chamoy</label>
           <label><input type="checkbox" name="bases" value="guayaba" /> Guayaba</label>
           <label><input type="checkbox" name="bases" value="chamoy" /> Chamoy</label>
           <label><input type="checkbox" name="bases" value="piña" /> Piña</label>
           <label><input type="checkbox" name="bases" value="melón" /> Melón</label>
           <label><input type="checkbox" name="bases" value="uva" /> Uva</label>
           <label><input type="checkbox" name="bases" value="coco" /> Coco</label>
-          <label><input type="checkbox" name="bases" value="mango con chamoy" /> Mango con chamoy</label>
+          <label><input type="checkbox" name="bases" value="mango con chamoy" /> Mango/chamoy</label>
         </div>
       </fieldset>
 
@@ -412,6 +421,131 @@
     e.preventDefault();
   });
 </script>
+
+<!-- Modal de Chocoretas -->
+<div id="modalChocoretas" class="modal">
+  <div class="modal-contenido">
+    <span id="cerrarModalChocoretas" class="cerrar">&times;</span>
+    <h1>Chocoretas</h1>
+    <form id="formChocoretas">
+      <label for="tipoEventoChocoretas">Tipo de evento:</label>
+      <input type="text" id="tipoEventoChocoretas" name="tipoEvento" required />
+
+      <label for="tematicaEventoChocoretas">Temática del evento:</label>
+      <input type="text" id="tematicaEventoChocoretas" name="tematicaEvento" required />
+
+      <label for="fechaEventoChocoretas">Fecha del evento:</label>
+      <input type="date" id="fechaEventoChocoretas" name="fechaEvento" required />
+
+      <label for="cantidadPersonasChocoretas">Elige la cantidad de personas:</label>
+      <select id="cantidadPersonasChocoretas" name="cantidadPersonas" required>
+        <option value="" disabled selected>Selecciona</option>
+        <option value="30">30</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+        <option value="150">150</option>
+      </select>
+
+      <!-- Bases (solo muestra, no seleccionable) -->
+      <fieldset>
+        <legend>Bases (paleta de crema):</legend>
+        <ul>
+          <li>Fresa</li>
+          <li>Nuez</li>
+          <li>Pistache</li>
+          <li>Galleta</li>
+          <li>Fresa</li>
+        </ul>
+      </fieldset>
+
+      <!-- Toppings (solo muestra) -->
+      <fieldset>
+        <legend>Toppings:</legend>
+        <ul>
+          <li>Nuez</li>
+          <li>Oreo</li>
+          <li>Chococrispis</li>
+        </ul>
+      </fieldset>
+
+      <!-- Complementos (solo muestra) -->
+      <fieldset>
+        <legend>Complementos:</legend>
+        <ul>
+          <li>Viboras neón</li>
+          <li>Panditas</li>
+          <li>Aritos de durazno</li>
+          <li>Aritos de manzana</li>
+        </ul>
+      </fieldset>
+
+      <label for="especificacionChocoretas">Alguna especificación:</label>
+      <textarea id="especificacionChocoretas" name="especificacion" rows="3"></textarea>
+
+      <label for="numeroContactoChocoretas">Número de contacto:</label>
+      <input type="tel" id="numeroContactoChocoretas" name="numeroContacto" required pattern="[0-9]{8,15}" placeholder="Ej. 6567713238" />
+
+      <p><strong>Nota:</strong> Incluye toppings y complementos por paleta.</p>
+
+      <p id="precioChocoretas" style="font-weight:bold; margin-top: 10px;"></p>
+
+      <button type="submit">Enviar Cotización</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  // Abrir modal Chocoretas
+  const modalChocoretas = document.getElementById('modalChocoretas');
+  const btnChocoretasImg = document.getElementById('btnChocoretas');
+  const btnChocoretasText = document.getElementById('btnChocoretasText');
+  const cerrarModalChocoretas = document.getElementById('cerrarModalChocoretas');
+
+  btnChocoretasImg.addEventListener('click', () => modalChocoretas.style.display = 'block');
+  btnChocoretasText.addEventListener('click', () => modalChocoretas.style.display = 'block');
+
+  cerrarModalChocoretas.addEventListener('click', () => modalChocoretas.style.display = 'none');
+
+  window.addEventListener('click', (e) => {
+    if (e.target === modalChocoretas) modalChocoretas.style.display = 'none';
+  });
+
+  // Mostrar precio según cantidad seleccionada
+  const cantidadPersonasChocoretas = document.getElementById('cantidadPersonasChocoretas');
+  const precioDisplayChocoretas = document.getElementById('precioChocoretas');
+
+  cantidadPersonasChocoretas.addEventListener('change', () => {
+    const val = cantidadPersonasChocoretas.value;
+    let precio = '';
+    switch(val) {
+      case '30':
+        precio = '$2100';
+        break;
+      case '50':
+        precio = '$3400';
+        break;
+      case '100':
+        precio = '$6000';
+        break;
+      case '150':
+        precio = '$8500';
+        break;
+      default:
+        precio = '';
+    }
+    precioDisplayChocoretas.textContent = precio ? `Precio: ${precio}` : '';
+  });
+
+  // Envío de formulario
+  document.getElementById('formChocoretas').addEventListener('submit', e => {
+    e.preventDefault();
+    alert('Formulario de Chocoretas enviado. ¡Gracias por tu pedido!');
+    modalChocoretas.style.display = 'none';
+    e.target.reset();
+    precioDisplayChocoretas.textContent = '';
+  });
+</script>
+
 
     </body>
     </html>
