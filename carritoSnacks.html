@@ -231,9 +231,9 @@
   }
 
   // Aplicar límite a bases (2), frutas (2) y complementos (8)
-  limitarChecks('input[name="bases"]', 2);
-  limitarChecks('input[name="frutas"]', 3);
-  limitarChecks('input[name="complementos"]', 7);
+  limitarChecks('input[name="bases[]"]', 2);
+  limitarChecks('input[name="frutas[]"]', 3);
+  limitarChecks('input[name="complementos[]"]', 7);
 
   // Mostrar precio según cantidad seleccionada
   const cantidadPersonas = document.getElementById('cantidadPersonas');
