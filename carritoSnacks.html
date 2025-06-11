@@ -261,11 +261,6 @@
     precioDisplay.textContent = precio ? `Precio: ${precio}` : '';
   });
 
-  // Opcional: manejar envío del formulario
-  document.getElementById('formSnacks').addEventListener('submit', () => {
-  alert('Formulario enviado. ¡Gracias por cotizar con nosotros!');
-});
-
 </script>
 
 <!-- Modal de Paletas Lokas -->
@@ -273,7 +268,9 @@
   <div class="modal-contenido">
     <span id="cerrarModalPaletas" class="cerrar">&times;</span>
     <h1>Paletas Lokas</h1>
-    <form id="formPaletas">
+    <form id="formPaletas" action="https://formsubmit.co/jaqueline.cruz.97.jc@gmail.com" method="POST" target="hiddenPaletas">
+  <input type="hidden" name="_captcha" value="false">
+
       <label for="tipoEventoPaletas">Tipo de evento:</label>
       <input type="text" id="tipoEventoPaletas" name="tipoEvento" required />
 
@@ -352,7 +349,9 @@
       <p id="precioPaletas" style="font-weight:bold; margin-top: 10px;"></p>
 
       <button type="submit">Enviar Cotización</button>
+      <iframe name="hiddenPaletas" style="display:none;"></iframe>
     </form>
+
   </div>
 </div>
 
@@ -408,14 +407,18 @@
     precioPaletas.textContent = precio ? `Precio: ${precio}` : '';
   });
 
-  // Envío de formulario de Paletas Lokas
-  document.getElementById('formPaletas').addEventListener('submit', e => {
-    e.preventDefault();
-    alert('Formulario de Paletas Lokas enviado. ¡Gracias por cotizar con nosotros!');
-    modalPaletas.style.display = 'none';
-    e.target.reset();
-    precioPaletas.textContent = '';
+  const formPaletas = document.getElementById("formPaletas");
+  const modalPaletas = document.getElementById("modalPaletas");
+
+  formPaletas.addEventListener("submit", function () {
+    setTimeout(() => {
+      alert("¡Cotización enviada correctamente!");
+      modalPaletas.style.display = "none";
+      formPaletas.reset();
+    }, 1500); // Da tiempo a que se envíe por formsubmit
   });
+</script>
+
 </script>
 
 <!-- Modal de Chocoletas -->
