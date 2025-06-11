@@ -262,13 +262,10 @@
   });
 
   // Opcional: manejar envío del formulario
-  document.getElementById('formSnacks').addEventListener('submit', e => {
-    e.preventDefault();
-    alert('Formulario enviado. ¡Gracias por cotizar con nosotros!');
-    modal.style.display = 'none';
-    e.target.reset();
-    precioDisplay.textContent = '';
-  });
+  document.getElementById('formSnacks').addEventListener('submit', () => {
+  alert('Formulario enviado. ¡Gracias por cotizar con nosotros!');
+});
+
 </script>
 
 <!-- Modal de Paletas Lokas -->
