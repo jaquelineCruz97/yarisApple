@@ -61,7 +61,7 @@
 
   <div class="galeriaOpc">
 
-    <!-- Paletas Lokas -->
+    <!-- Snacks -->
     <div class="producto">
         <img
           src="https://i.postimg.cc/K8wXD8vm/WhatsApp_Image_2025-05-28_at_1.54.29_PM.jpg"
@@ -86,16 +86,22 @@
 <div class="producto">
   <img
     src= "https://i.postimg.cc/Mpv2BQws/WhatsApp_Image_2025-05-28_at_1.54.30_PM.jpg"
-    alt="Chocoretas"
-    data-producto="Chocoretas"
-    id="btnChocoretas"
+    alt="Chocoletas"
+    data-producto="Chocoletas"
+    id="btnChocoletas"
   />
-  <div class="nombre-producto" id="btnChocoretasText">Chocoretas</div>
+  <div class="nombre-producto" id="btnChocoletasText">Chocoletas</div>
 </div>
-    <div class="producto">
-      <img src="https://i.postimg.cc/y6yHCKnT/WhatsApp_Image_2025-05-28_at_1.54.30_PM_(1).jpg" alt="Preparados" data-producto="Preparados">
-      <div class="nombre-producto">Preparados</div>
-    </div>
+
+<!-- Producto Preparados -->
+<div class="producto">
+  <img
+    src="https://i.postimg.cc/y6yHCKnT/WhatsApp_Image_2025-05-28_at_1.54.30_PM_(1).jpg"
+    alt="Preparados"
+    id="btnPreparados"
+  />
+  <div class="nombre-producto" id="btnPreparadosText">Preparados</div>
+</div>
   </div>
   </div>
     </main> 
@@ -161,8 +167,9 @@
           <label><input type="checkbox" name="complementos" value="manguitos chile" /> Manguitos chile</label>
           <label><input type="checkbox" name="complementos" value="panditas" /> Panditas</label>
           <label><input type="checkbox" name="complementos" value="panditas enchilados" /> Panditas enchilados</label>
-          <label><input type="checkbox" name="complementos" value="panditas neón" /> Panditas neón</label>
+          <label><input type="checkbox" name="complementos" value="Gumys frutitas" /> Gumys frutitas</label>
           <label><input type="checkbox" name="complementos" value="viboritas" /> Viboritas</label>
+          <label><input type="checkbox" name="complementos" value="viboritas neón" /> Viboritas neón</label>
           <label><input type="checkbox" name="complementos" value="cubos neón" /> Cubos neón</label>
           <label><input type="checkbox" name="complementos" value="cacahuates japoneses" /> Cacahuates japoneses</label>
           <label><input type="checkbox" name="complementos" value="cacahuates tipo nuts" /> Cacahuates tipo nuts</label>
@@ -326,6 +333,7 @@
           <label><input type="checkbox" name="complementos" value="panditas" /> Panditas</label>
           <label><input type="checkbox" name="complementos" value="panditas enchilados" /> Panditas enchilados</label>
           <label><input type="checkbox" name="complementos" value="viboritas" /> Viboritas</label>
+          <label><input type="checkbox" name="complementos" value="viboritas neón" /> Viboritas neón</label>
           <label><input type="checkbox" name="complementos" value="cubos neón" /> Cubos neón</label>
           <label><input type="checkbox" name="complementos" value="cacahuates japoneses" /> Cacahuates japoneses</label>
           <label><input type="checkbox" name="complementos" value="banderillas tamarindo" /> Banderillas tamarindo</label>
@@ -411,44 +419,23 @@
   });
 </script>
 
-
-  <br>
-      <!-- Footer -->
-      <footer>
-  <p>Síguenos en nuestras redes sociales:</p>
-  <div class="social-icons">
-    <a href="https://www.facebook.com/yaris.apple" target="_blank" aria-label="Facebook">
-      <img src="https://cdn-icons-png.flaticon.com/512/20/20837.png" alt="Facebook">
-    </a>
-    <a href="https://www.tiktok.com/@yarimecc" target="_blank" aria-label="TikTok">
-      <img src="https://cdn-icons-png.flaticon.com/512/3046/3046120.png" alt="TikTok">
-    </a>
-  </div>
-  <p>&copy; 2025 Yari´s Apple</p>
-</footer>
-  <script>
-  document.addEventListener("contextmenu", function(e) {
-    e.preventDefault();
-  });
-</script>
-
-<!-- Modal de Chocoretas -->
-<div id="modalChocoretas" class="modal">
+<!-- Modal de Chocoletas -->
+<div id="modalChocoletas" class="modal">
   <div class="modal-contenido">
-    <span id="cerrarModalChocoretas" class="cerrar">&times;</span>
-    <h1>Chocoretas</h1>
-    <form id="formChocoretas">
-      <label for="tipoEventoChocoretas">Tipo de evento:</label>
-      <input type="text" id="tipoEventoChocoretas" name="tipoEvento" required />
+    <span id="cerrarModalChocoletas" class="cerrar">&times;</span>
+    <h1>Chocoletas</h1>
+    <form id="formChocoletas">
+      <label for="tipoEventoChocoletas">Tipo de evento:</label>
+      <input type="text" id="tipoEventoChocoletas" name="tipoEvento" required />
 
-      <label for="tematicaEventoChocoretas">Temática del evento:</label>
-      <input type="text" id="tematicaEventoChocoretas" name="tematicaEvento" required />
+      <label for="tematicaEventoChocoletas">Temática del evento:</label>
+      <input type="text" id="tematicaEventoChocoletas" name="tematicaEvento" required />
 
-      <label for="fechaEventoChocoretas">Fecha del evento:</label>
-      <input type="date" id="fechaEventoChocoretas" name="fechaEvento" required />
+      <label for="fechaEventoChocoletas">Fecha del evento:</label>
+      <input type="date" id="fechaEventoChocoletas" name="fechaEvento" required />
 
-      <label for="cantidadPersonasChocoretas">Elige la cantidad de personas:</label>
-      <select id="cantidadPersonasChocoretas" name="cantidadPersonas" required>
+      <label for="cantidadPersonasChocoletas">Elige la cantidad de personas:</label>
+      <select id="cantidadPersonasChocoletas" name="cantidadPersonas" required>
         <option value="" disabled selected>Selecciona</option>
         <option value="30">30</option>
         <option value="50">50</option>
@@ -489,15 +476,18 @@
         </ul>
       </fieldset>
 
-      <label for="especificacionChocoretas">Alguna especificación:</label>
-      <textarea id="especificacionChocoretas" name="especificacion" rows="3"></textarea>
+      <label for="especificacionChocoletas">Alguna especificación:</label>
+      <textarea id="especificacionChocoletas" name="especificacion" rows="3"></textarea>
 
-      <label for="numeroContactoChocoretas">Número de contacto:</label>
-      <input type="tel" id="numeroContactoChocoretas" name="numeroContacto" required pattern="[0-9]{8,15}" placeholder="Ej. 6567713238" />
+      <label for="numeroContactoChocoletas">Número de contacto:</label>
+      <input type="tel" id="numeroContactoChocoletas" name="numeroContacto" required pattern="[0-9]{8,15}" placeholder="Ej. 6567713238" />
 
-      <p><strong>Nota:</strong> Incluye toppings y complementos por paleta.</p>
+      <p><strong>Nota:</strong> Plato personalizado</p>
+      <p><strong>Incluye:</strong> toppings y complementos por paleta.</p>
 
-      <p id="precioChocoretas" style="font-weight:bold; margin-top: 10px;"></p>
+
+
+      <p id="precioChocoletas" style="font-weight:bold; margin-top: 10px;"></p>
 
       <button type="submit">Enviar Cotización</button>
     </form>
@@ -505,27 +495,27 @@
 </div>
 
 <script>
-  // Abrir modal Chocoretas
-  const modalChocoretas = document.getElementById('modalChocoretas');
-  const btnChocoretasImg = document.getElementById('btnChocoretas');
-  const btnChocoretasText = document.getElementById('btnChocoretasText');
-  const cerrarModalChocoretas = document.getElementById('cerrarModalChocoretas');
+  // Abrir modal Chocoletas
+  const modalChocoletas = document.getElementById('modalChocoletas');
+  const btnChocoletasImg = document.getElementById('btnChocoletas');
+  const btnChocoletasText = document.getElementById('btnChocoletasText');
+  const cerrarModalChocolelas = document.getElementById('cerrarModalChocoletas');
 
-  btnChocoretasImg.addEventListener('click', () => modalChocoretas.style.display = 'block');
-  btnChocoretasText.addEventListener('click', () => modalChocoretas.style.display = 'block');
+  btnChocoletasImg.addEventListener('click', () => modalChocoletas.style.display = 'block');
+  btnChocoletasText.addEventListener('click', () => modalChocoletas.style.display = 'block');
 
-  cerrarModalChocoretas.addEventListener('click', () => modalChocoretas.style.display = 'none');
+  cerrarModalChocoletas.addEventListener('click', () => modalChocoletas.style.display = 'none');
 
   window.addEventListener('click', (e) => {
-    if (e.target === modalChocoretas) modalChocoretas.style.display = 'none';
+    if (e.target === modalChocoletas) modalChocoletas.style.display = 'none';
   });
 
   // Mostrar precio según cantidad seleccionada
-  const cantidadPersonasChocoretas = document.getElementById('cantidadPersonasChocoretas');
-  const precioDisplayChocoretas = document.getElementById('precioChocoretas');
+  const cantidadPersonasChocoletas = document.getElementById('cantidadPersonasChocoletas');
+  const precioDisplayChocoletas = document.getElementById('precioChocoletas');
 
-  cantidadPersonasChocoretas.addEventListener('change', () => {
-    const val = cantidadPersonasChocoretas.value;
+  cantidadPersonasChocoletas.addEventListener('change', () => {
+    const val = cantidadPersonasChocoletas.value;
     let precio = '';
     switch(val) {
       case '30':
@@ -543,16 +533,162 @@
       default:
         precio = '';
     }
-    precioDisplayChocoretas.textContent = precio ? `Precio: ${precio}` : '';
+    precioDisplayChocoletas.textContent = precio ? `Precio: ${precio}` : '';
   });
 
   // Envío de formulario
-  document.getElementById('formChocoretas').addEventListener('submit', e => {
+  document.getElementById('formChocoletas').addEventListener('submit', e => {
     e.preventDefault();
-    alert('Formulario de Chocoretas enviado. ¡Gracias por tu pedido!');
-    modalChocoretas.style.display = 'none';
+    alert('Formulario de Chocoletas enviado. ¡Gracias por tu pedido!');
+    modalChocoletas.style.display = 'none';
     e.target.reset();
-    precioDisplayChocoretas.textContent = '';
+    precioDisplayChocoletas.textContent = '';
+  });
+</script>
+
+
+
+ <br>
+      <!-- Footer -->
+      <footer>
+  <p>Síguenos en nuestras redes sociales:</p>
+  <div class="social-icons">
+    <a href="https://www.facebook.com/yaris.apple" target="_blank" aria-label="Facebook">
+      <img src="https://cdn-icons-png.flaticon.com/512/20/20837.png" alt="Facebook">
+    </a>
+    <a href="https://www.tiktok.com/@yarimecc" target="_blank" aria-label="TikTok">
+      <img src="https://cdn-icons-png.flaticon.com/512/3046/3046120.png" alt="TikTok">
+    </a>
+  </div>
+  <p>&copy; 2025 Yari´s Apple</p>
+</footer>
+  <script>
+  document.addEventListener("contextmenu", function(e) {
+    e.preventDefault();
+  });
+</script>
+
+
+<!-- Modal de Preparados -->
+<div id="modalPreparados" class="modal">
+  <div class="modal-contenido">
+    <span id="cerrarModalPreparados" class="cerrar">&times;</span>
+    <h1>Preparados</h1>
+    <form id="formPreparados">
+      <label for="tipoEventoPreparados">Tipo de evento:</label>
+      <input type="text" id="tipoEventoPreparados" name="tipoEvento" required />
+
+      <label for="tematicaEventoPreparados">Temática del evento:</label>
+      <input type="text" id="tematicaEventoPreparados" name="tematicaEvento" required />
+
+      <label for="fechaEventoPreparados">Fecha del evento:</label>
+      <input type="date" id="fechaEventoPreparados" name="fechaEvento" required />
+
+      <label for="cantidadPersonasPreparados">Elige la cantidad de personas:</label>
+      <select id="cantidadPersonasPreparados" name="cantidadPersonas" required>
+        <option value="" disabled selected>Selecciona</option>
+        <option value="30">30</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+        <option value="150">150</option>
+      </select>
+
+      <!-- Bases (solo muestra) -->
+      <fieldset>
+        <legend>Bases:</legend>
+        <ul>
+          <li>Chicharrón de harina</li>
+          <li>Tostitos</li>
+          <li>Chetos Flaming Hot</li>
+          <li>Tostaditas con chile</li>
+          <li>Papas caseras</li>
+        </ul>
+      </fieldset>
+
+      <!-- Verduras (en lugar de toppings) -->
+      <fieldset>
+        <legend>Verduras:</legend>
+        <ul>
+          <li>Repollo</li>
+          <li>Tomate</li>
+          <li>Aguacate líquido</li>
+        </ul>
+      </fieldset>
+
+      <!-- Complementos -->
+      <fieldset>
+        <legend>Complementos:</legend>
+        <ul>
+          <li>Cueritos</li>
+          <li>Queso rallado</li>
+        </ul>
+      </fieldset>
+
+      <label for="especificacionPreparados">Alguna especificación:</label>
+      <textarea id="especificacionPreparados" name="especificacion" rows="3"></textarea>
+
+      <label for="numeroContactoPreparados">Número de contacto:</label>
+      <input type="tel" id="numeroContactoPreparados" name="numeroContacto" required pattern="[0-9]{8,15}" placeholder="Ej. 6567713238" />
+
+      <p><strong>Nota:</strong> Charola individual cuadrada, personalizado</p>
+      <p><strong>Incluye:</strong> Salsa, chamoy y tajín</p>
+
+      <p id="precioPreparados" style="font-weight:bold; margin-top: 10px;"></p>
+
+      <button type="submit">Enviar Cotización</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  // Abrir modal Preparados
+  const modalPreparados = document.getElementById('modalPreparados');
+  const btnPreparadosImg = document.getElementById('btnPreparados');
+  const btnPreparadosText = document.getElementById('btnPreparadosText');
+  const cerrarModalPreparados = document.getElementById('cerrarModalPreparados');
+
+  btnPreparadosImg.addEventListener('click', () => modalPreparados.style.display = 'block');
+  btnPreparadosText.addEventListener('click', () => modalPreparados.style.display = 'block');
+
+  cerrarModalPreparados.addEventListener('click', () => modalPreparados.style.display = 'none');
+
+  window.addEventListener('click', (e) => {
+    if (e.target === modalPreparados) modalPreparados.style.display = 'none';
+  });
+
+  // Mostrar precio según cantidad seleccionada
+  const cantidadPersonasPreparados = document.getElementById('cantidadPersonasPreparados');
+  const precioDisplayPreparados = document.getElementById('precioPreparados');
+
+  cantidadPersonasPreparados.addEventListener('change', () => {
+    const val = cantidadPersonasPreparados.value;
+    let precio = '';
+    switch(val) {
+      case '30':
+        precio = '$1800';
+        break;
+      case '50':
+        precio = '$2800';
+        break;
+      case '100':
+        precio = '$5000';
+        break;
+      case '150':
+        precio = '$7200';
+        break;
+      default:
+        precio = '';
+    }
+    precioDisplayPreparados.textContent = precio ? `Precio: ${precio}` : '';
+  });
+
+  // Envío de formulario
+  document.getElementById('formPreparados').addEventListener('submit', e => {
+    e.preventDefault();
+    alert('Formulario de Preparados enviado. ¡Gracias por tu pedido!');
+    modalPreparados.style.display = 'none';
+    e.target.reset();
+    precioDisplayPreparados.textContent = '';
   });
 </script>
 
