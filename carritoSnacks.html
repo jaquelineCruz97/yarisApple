@@ -423,7 +423,9 @@
   <div class="modal-contenido">
     <span id="cerrarModalChocoletas" class="cerrar">&times;</span>
     <h1>Chocoletas</h1>
-    <form id="formChocoletas">
+    <form id="formChocoletas" action="https://formsubmit.co/jaqueline.cruz.97.jc@gmail.com" method="POST" target="hiddenChocoletas">
+  <input type="hidden" name="_captcha" value="false">
+
       <label for="tipoEventoChocoletas">Tipo de evento:</label>
       <input type="text" id="tipoEventoChocoletas" name="tipoEvento" required />
 
@@ -535,14 +537,17 @@
     precioDisplayChocoletas.textContent = precio ? `Precio: ${precio}` : '';
   });
 
-  // Envío de formulario
-  document.getElementById('formChocoletas').addEventListener('submit', e => {
-    e.preventDefault();
-    alert('Formulario de Chocoletas enviado. ¡Gracias por tu pedido!');
+const formChocoletas = document.getElementById('formChocoletas');
+
+formChocoletas.addEventListener('submit', function () {
+  setTimeout(() => {
+    alert('¡Cotización de Chocoletas enviada correctamente!');
     modalChocoletas.style.display = 'none';
-    e.target.reset();
+    formChocoletas.reset();
     precioDisplayChocoletas.textContent = '';
-  });
+  }, 1500); // Tiempo para asegurar que formsubmit procese
+});
+
 </script>
 
 <!-- Modal de Preparados -->
@@ -550,9 +555,6 @@
   <div class="modal-contenido">
     <span id="cerrarModalPreparados" class="cerrar">&times;</span>
     <h1>Preparados</h1>
-    
-    <form id="formChocoletas" action="https://formsubmit.co/jaqueline.cruz.97.jc@gmail.com" method="POST" target="hiddenChocoletas">
-  <input type="hidden" name="_captcha" value="false">
 
       <label for="tipoEventoPreparados">Tipo de evento:</label>
       <input type="text" id="tipoEventoPreparados" name="tipoEvento" required />
@@ -663,16 +665,11 @@
     precioDisplayPreparados.textContent = precio ? `Precio: ${precio}` : '';
   });
 
-  const formChocoletas = document.getElementById('formChocoletas');
 
-formChocoletas.addEventListener('submit', function () {
-  setTimeout(() => {
-    alert('¡Cotización de Chocoletas enviada correctamente!');
-    modalChocoletas.style.display = 'none';
-    formChocoletas.reset();
-    precioDisplayChocoletas.textContent = '';
-  }, 1500); // Tiempo para asegurar que formsubmit procese
-});
+
+
+
+
 
 </script>
 
