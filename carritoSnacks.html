@@ -546,73 +546,77 @@
 </script>
 
 <!-- Modal de Preparados -->
-<form id="formChocoletas" action="https://formsubmit.co/jaqueline.cruz.97.jc@gmail.com" method="POST" target="hiddenChocoletas">
+<div id="modalPreparados" class="modal">
+  <div class="modal-contenido">
+    <span id="cerrarModalPreparados" class="cerrar">&times;</span>
+    <h1>Preparados</h1>
+    
+    <form id="formChocoletas" action="https://formsubmit.co/jaqueline.cruz.97.jc@gmail.com" method="POST" target="hiddenChocoletas">
   <input type="hidden" name="_captcha" value="false">
 
-  <label for="tipoEventoChocoletas">Tipo de evento:</label>
-  <input type="text" id="tipoEventoChocoletas" name="tipoEvento" required />
+      <label for="tipoEventoPreparados">Tipo de evento:</label>
+      <input type="text" id="tipoEventoPreparados" name="tipoEvento" required />
 
-  <label for="tematicaEventoChocoletas">Temática del evento:</label>
-  <input type="text" id="tematicaEventoChocoletas" name="tematicaEvento" required />
+      <label for="tematicaEventoPreparados">Temática del evento:</label>
+      <input type="text" id="tematicaEventoPreparados" name="tematicaEvento" required />
 
-  <label for="fechaEventoChocoletas">Fecha del evento:</label>
-  <input type="date" id="fechaEventoChocoletas" name="fechaEvento" required />
+      <label for="fechaEventoPreparados">Fecha del evento:</label>
+      <input type="date" id="fechaEventoPreparados" name="fechaEvento" required />
 
-  <label for="cantidadPersonasChocoletas">Elige la cantidad de personas:</label>
-  <select id="cantidadPersonasChocoletas" name="cantidadPersonas" required>
-    <option value="" disabled selected>Selecciona</option>
-    <option value="30">30</option>
-    <option value="50">50</option>
-    <option value="100">100</option>
-    <option value="150">150</option>
-  </select>
+      <label for="cantidadPersonasPreparados">Elige la cantidad de personas:</label>
+      <select id="cantidadPersonasPreparados" name="cantidadPersonas" required>
+        <option value="" disabled selected>Selecciona</option>
+        <option value="30">30</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+        <option value="150">150</option>
+      </select>
 
-  <!-- Mostrar contenido sin inputs -->
-  <fieldset>
-    <legend>Bases (paleta de crema):</legend>
-    <ul>
-      <li>Fresa</li>
-      <li>Nuez</li>
-      <li>Pistache</li>
-      <li>Galleta</li>
-    </ul>
-  </fieldset>
+      <!-- Bases (solo muestra) -->
+      <fieldset>
+        <legend>Bases:</legend>
+        <ul>
+          <li>Chicharrón de harina</li>
+          <li>Tostitos</li>
+          <li>Chetos Flaming Hot</li>
+          <li>Tostaditas con chile</li>
+          <li>Papas caseras</li>
+        </ul>
+      </fieldset>
 
-  <fieldset>
-    <legend>Toppings:</legend>
-    <ul>
-      <li>Nuez</li>
-      <li>Oreo</li>
-      <li>Chococrispis</li>
-    </ul>
-  </fieldset>
+      <!-- Verduras (en lugar de toppings) -->
+      <fieldset>
+        <legend>Verduras:</legend>
+        <ul>
+          <li>Repollo</li>
+          <li>Tomate</li>
+          <li>Aguacate líquido</li>
+        </ul>
+      </fieldset>
 
-  <fieldset>
-    <legend>Complementos:</legend>
-    <ul>
-      <li>Viboras neón</li>
-      <li>Panditas</li>
-      <li>Aritos de durazno</li>
-      <li>Aritos de manzana</li>
-    </ul>
-  </fieldset>
+      <!-- Complementos -->
+      <fieldset>
+        <legend>Complementos:</legend>
+        <ul>
+          <li>Cueritos</li>
+          <li>Queso rallado</li>
+        </ul>
+      </fieldset>
 
-  <label for="especificacionChocoletas">Alguna especificación:</label>
-  <textarea id="especificacionChocoletas" name="especificacion" rows="3"></textarea>
+      <label for="especificacionPreparados">Alguna especificación:</label>
+      <textarea id="especificacionPreparados" name="especificacion" rows="3"></textarea>
 
-  <label for="numeroContactoChocoletas">Número de contacto:</label>
-  <input type="tel" id="numeroContactoChocoletas" name="numeroContacto" required pattern="[0-9]{8,15}" placeholder="Ej. 6567713238" />
+      <label for="numeroContactoPreparados">Número de contacto:</label>
+      <input type="tel" id="numeroContactoPreparados" name="numeroContacto" required pattern="[0-9]{8,15}" placeholder="Ej. 6567713238" />
 
-  <p><strong>Nota:</strong> Plato personalizado</p>
-  <p><strong>Incluye:</strong> toppings y complementos por paleta.</p>
+      <p><strong>Nota:</strong> Charola individual cuadrada, personalizado</p>
+      <p><strong>Incluye:</strong> Salsa, chamoy y tajín</p>
 
-  <p id="precioChocoletas" style="font-weight:bold; margin-top: 10px;"></p>
-
-  <button type="submit">Enviar Cotización</button>
-</form>
-
-<!-- iframe oculto para evitar redirección -->
-<iframe name="hiddenChocoletas" style="display: none;"></iframe>
+      <p id="precioPreparados" style="font-weight:bold; margin-top: 10px;"></p>
+      
+      <button type="submit">Enviar Cotización</button>
+    </form>
+    <iframe name="hiddenChocoletas" style="display: none;"></iframe>
 
   </div>
 </div>
@@ -659,7 +663,7 @@
     precioDisplayPreparados.textContent = precio ? `Precio: ${precio}` : '';
   });
 
-const formChocoletas = document.getElementById('formChocoletas');
+  const formChocoletas = document.getElementById('formChocoletas');
 
 formChocoletas.addEventListener('submit', function () {
   setTimeout(() => {
@@ -669,6 +673,7 @@ formChocoletas.addEventListener('submit', function () {
     precioDisplayChocoletas.textContent = '';
   }, 1500); // Tiempo para asegurar que formsubmit procese
 });
+
 </script>
 
 
