@@ -559,6 +559,12 @@ formChocoletas.addEventListener('submit', function () {
     <form id="formPreparados" action="https://formsubmit.co/jaqueline.cruz.97.jc@gmail.com" method="POST" target="hiddenPreparados">
   <input type="hidden" name="_captcha" value="false">
 
+  <!-- Campo oculto: Servicio -->
+      <input type="hidden" name="servicio" value="Preparados" />
+
+      <!-- Campo oculto: Precio (se actualiza por JS) -->
+      <input type="hidden" name="precioCotizacion" id="precioPreparadosInput" />
+
       <label for="tipoEventoPreparados">Tipo de evento:</label>
       <input type="text" id="tipoEventoPreparados" name="tipoEvento" required />
 
@@ -566,7 +572,8 @@ formChocoletas.addEventListener('submit', function () {
       <input type="text" id="tematicaEventoPreparados" name="tematicaEvento" required />
 
       <label for="fechaEventoPreparados">Fecha del evento:</label>
-      <input type="date" id="fechaEventoPreparados" name="fechaEvento" required />
+      <input type="date" id="fechaEventoPreparados" name="fechaEvento" required>
+
 
       <label for="cantidadPersonasPreparados">Elige la cantidad de personas:</label>
       <select id="cantidadPersonasPreparados" name="cantidadPersonas" required>
