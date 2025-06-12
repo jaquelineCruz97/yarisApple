@@ -410,7 +410,7 @@
 
   formPaletas.addEventListener("submit", function () {
     setTimeout(() => {
-      alert("¡Cotización enviada correctamente!");
+      alert("¡Gracias! Te contactaremos lo más pronto posible.");
       modalPaletas.style.display = "none";
       formPaletas.reset();
     }, 1500); // Da tiempo a que se envíe por formsubmit
@@ -541,7 +541,7 @@ const formChocoletas = document.getElementById('formChocoletas');
 
 formChocoletas.addEventListener('submit', function () {
   setTimeout(() => {
-    alert('¡Cotización de Chocoletas enviada correctamente!');
+    alert("¡Gracias! Te contactaremos lo más pronto posible.");
     modalChocoletas.style.display = 'none';
     formChocoletas.reset();
     precioDisplayChocoletas.textContent = '';
@@ -555,6 +555,9 @@ formChocoletas.addEventListener('submit', function () {
   <div class="modal-contenido">
     <span id="cerrarModalPreparados" class="cerrar">&times;</span>
     <h1>Preparados</h1>
+
+    <form id="formPreparados" action="https://formsubmit.co/jaqueline.cruz.97.jc@gmail.com" method="POST" target="hiddenPreparados">
+  <input type="hidden" name="_captcha" value="false">
 
       <label for="tipoEventoPreparados">Tipo de evento:</label>
       <input type="text" id="tipoEventoPreparados" name="tipoEvento" required />
@@ -618,7 +621,8 @@ formChocoletas.addEventListener('submit', function () {
       
       <button type="submit">Enviar Cotización</button>
     </form>
-    <iframe name="hiddenChocoletas" style="display: none;"></iframe>
+   
+    <iframe name="hiddenPreparados" style="display: none;"></iframe>
 
   </div>
 </div>
@@ -664,6 +668,33 @@ formChocoletas.addEventListener('submit', function () {
     }
     precioDisplayPreparados.textContent = precio ? `Precio: ${precio}` : '';
   });
+// Modal Preparados
+const formPreparados = document.getElementById('formPreparados');
+
+
+// Mostrar precio
+cantidadPersonasPreparados.addEventListener('change', () => {
+  const val = cantidadPersonasPreparados.value;
+  let precio = '';
+  switch(val) {
+    case '30': precio = '$1900'; break;
+    case '50': precio = '$3200'; break;
+    case '100': precio = '$5800'; break;
+    case '150': precio = '$8100'; break;
+    default: precio = '';
+  }
+  precioDisplayPreparados.textContent = precio ? `Precio: ${precio}` : '';
+});
+
+// Envío y limpieza
+formPreparados.addEventListener('submit', function () {
+  setTimeout(() => {
+    alert("¡Gracias! Te contactaremos lo más pronto posible.");
+    modalPreparados.style.display = 'none';
+    formPreparados.reset();
+    precioDisplayPreparados.textContent = '';
+  }, 1500);
+});
 
 
 
@@ -742,7 +773,7 @@ document.getElementById("formSnacks").addEventListener("submit", function(e) {
   .then(response => {
     if (response.ok) {
       form.reset(); // Borra los campos
-      alert("¡Cotización enviada correctamente!");
+      alert("¡Gracias! Te contactaremos lo más pronto posiblee.");
       document.getElementById("modalSnacks").style.display = "none"; // Cierra el modal si lo deseas
     } else {
       alert("Error al enviar. Intenta nuevamente.");
