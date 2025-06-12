@@ -386,9 +386,9 @@
   }
 
   // Limitar Paletas Lokas (4 bases, 3 frutas, 5 complementos)
-  limitarChecks('#modalPaletas input[name="bases"]', 4);
-  limitarChecks('#modalPaletas input[name="frutas"]', 3);
-  limitarChecks('#modalPaletas input[name="complementos"]', 5);
+  limitarChecks('#modalPaletas input[name="bases[]"]', 4);
+  limitarChecks('#modalPaletas input[name="frutas[]"]', 3);
+  limitarChecks('#modalPaletas input[name="complementos[]"]', 5);
 
   // Mostrar precio en Paletas Lokas
   const cantidadPaletas = document.getElementById('cantidadPersonasPaletas');
@@ -407,8 +407,6 @@
     precioPaletas.textContent = precio ? `Precio: ${precio}` : '';
   });
 
-  const formPaletas = document.getElementById("formPaletas");
-  const modalPaletas = document.getElementById("modalPaletas");
 
   formPaletas.addEventListener("submit", function () {
     setTimeout(() => {
@@ -419,7 +417,6 @@
   });
 </script>
 
-</script>
 
 <!-- Modal de Chocoletas -->
 <div id="modalChocoletas" class="modal">
