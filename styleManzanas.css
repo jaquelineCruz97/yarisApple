@@ -45,12 +45,11 @@ position: sticky;
   
   nav ul li {
     list-style: none;
-
   }
   
   nav ul li a {
     text-decoration: none;
-    color: #015826; 
+    color: rgb(7, 110, 3);
     font-size: 1.1rem;
     padding: 8px 20px;
     border-radius: 30px;
@@ -61,6 +60,16 @@ position: sticky;
     background-color: #045024;
     color: white;
   }
+
+    /* Botón hamburguesa (oculto en escritorio) */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: #015826;
+  cursor: pointer;
+  padding: 10px;
+}
+  
   
   .seccion-principal {
   display: flex;
@@ -334,16 +343,23 @@ input[type="datetime-local"] {
     max-width: 180px;
   }
 
+   .menu-toggle {
+    display: block;
+    text-align: right;
+  }
+
   nav ul {
     flex-direction: column;
+    align-items: center;
     gap: 10px;
-    padding: 1vh;
-   }
-
-  nav ul li a {
-    font-size: 0.9rem;
-    padding: 5px 12px;
+    display: none; /* Ocultamos por defecto */
+    padding: 20px 0;
   }
+
+  nav ul.show {
+    display: flex; /* Mostramos cuando se activa */
+  }
+  
 
       .galeria {
   column-count: 1;

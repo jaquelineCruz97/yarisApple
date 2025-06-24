@@ -17,16 +17,27 @@
     </section>
 
       <section class="navbar">
-      <nav>
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="manzanas.html">Manzanas</a></li>
-          <li><a href="carritoSnacks.html">Carrito de snacks</a></li>
-          <li><a href="otrosServicios.html">Otros servicios</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-      </nav>
-    </section>
+  <nav>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div> <!-- Icono de menú -->
+
+    <ul class="menu" id="menu">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="manzanas.html">Manzanas</a></li>
+      <li><a href="carritoSnacks.html">Carrito de snacks</a></li>
+      <li><a href="otrosServicios.html">Otros servicios</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+</section>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu');
+
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('show');
+  });
+</script>
   </header>
 
 
@@ -55,6 +66,7 @@
       <h2>Galería</h2>
       <div class="galeria">
         <!-- uno lado de imagenes -->
+         <img src="https://i.postimg.cc/DwBfjdVj/Whats-App-Image-2025-06-09-at-11-06-00-PM.jpg" alt="#imagen">
     <img src="https://i.postimg.cc/MGr3LLx0/Whats-App-Image-2025-05-29-at-7-21-55-PM.jpg" alt="#imagen">
 <img src="https://i.postimg.cc/cJJ5XWq4/Whats-App-Image-2025-05-29-at-7-21-55-PM-1.jpg" alt="#imagen">
 <img src="https://i.postimg.cc/fLtqQvTG/Whats-App-Image-2025-05-29-at-7-21-56-PM.jpg" alt="#imagen">

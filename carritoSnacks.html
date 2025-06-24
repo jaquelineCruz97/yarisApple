@@ -115,6 +115,9 @@
     <form id="formSnacks" action="https://formsubmit.co/jaqueline.cruz.97.jc@gmail.com" method="POST">
   <input type="hidden" name="_captcha" value="false">
 
+    <!-- Campo oculto: Servicio -->
+      <input type="hidden" name="servicio" value="Snacks" />
+
       <label for="tipoEvento">Tipo de evento:</label>
       <input type="text" id="tipoEvento" name="tipoEvento" required />
 
@@ -271,6 +274,9 @@
     <form id="formPaletas" action="https://formsubmit.co/jaqueline.cruz.97.jc@gmail.com" method="POST" target="hiddenPaletas">
   <input type="hidden" name="_captcha" value="false">
 
+    <!-- Campo oculto: Servicio -->
+      <input type="hidden" name="servicio" value="PaletasLokas" />
+
       <label for="tipoEventoPaletas">Tipo de evento:</label>
       <input type="text" id="tipoEventoPaletas" name="tipoEvento" required />
 
@@ -426,6 +432,9 @@
     <form id="formChocoletas" action="https://formsubmit.co/jaqueline.cruz.97.jc@gmail.com" method="POST" target="hiddenChocoletas">
   <input type="hidden" name="_captcha" value="false">
 
+    <!-- Campo oculto: Servicio -->
+      <input type="hidden" name="servicio" value="Chocoletas" />
+
       <label for="tipoEventoChocoletas">Tipo de evento:</label>
       <input type="text" id="tipoEventoChocoletas" name="tipoEvento" required />
 
@@ -561,9 +570,6 @@ formChocoletas.addEventListener('submit', function () {
 
   <!-- Campo oculto: Servicio -->
       <input type="hidden" name="servicio" value="Preparados" />
-
-      <!-- Campo oculto: Precio (se actualiza por JS) -->
-      <input type="hidden" name="precioCotizacion" id="precioPreparadosInput" />
 
       <label for="tipoEventoPreparados">Tipo de evento:</label>
       <input type="text" id="tipoEventoPreparados" name="tipoEvento" required />
@@ -703,18 +709,7 @@ formPreparados.addEventListener('submit', function () {
   }, 1500);
 });
 
-
-
-
-
-
-
 </script>
-
-
-
-
-
 
  <br>
       <!-- Footer -->
@@ -780,7 +775,7 @@ document.getElementById("formSnacks").addEventListener("submit", function(e) {
   .then(response => {
     if (response.ok) {
       form.reset(); // Borra los campos
-      alert("¡Gracias! Te contactaremos lo más pronto posiblee.");
+      alert("¡Gracias! Te contactaremos lo más pronto posible.");
       document.getElementById("modalSnacks").style.display = "none"; // Cierra el modal si lo deseas
     } else {
       alert("Error al enviar. Intenta nuevamente.");
