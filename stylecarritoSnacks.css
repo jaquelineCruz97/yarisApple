@@ -60,7 +60,7 @@ position: sticky;
   nav ul li a:hover {
     background-color: #045024;
     color: white;
-  }
+  } 
 
   /* Botón hamburguesa (oculto en escritorio) */
 .menu-toggle {
