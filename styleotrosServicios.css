@@ -12,6 +12,7 @@
   background-image: url(https://i.postimg.cc/prqBGR0N/watercolour-green-background.jpg);
   background-size: cover;
   background-attachment: fixed;
+  font-family: 'Montserrat', sans-serif;
   }
   
   /* Contenedor principal */
@@ -69,6 +70,20 @@ position: sticky;
   color: #015826;
   cursor: pointer;
   padding: 10px;
+}
+
+
+
+
+
+.seccion-principal {
+  display: grid;
+  place-items: center;
+}
+
+.OtrosServicios img{
+  height: 500px;
+  width: auto;
 }
 
   /* Estilo de Footer */
