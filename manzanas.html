@@ -171,9 +171,17 @@
   <label for="cantidad">Cantidad:</label>
   <input type="number" id="cantidad" name="cantidad" required oninput="calcularPrecio(); actualizarPuntosEntrega();">
   <label for="entrega">Lugar de entrega:</label>
-<select id="entrega" name="entrega" required>
+<select id="entrega" name="entrega" required onchange="mostrarOtroPunto()">
   <option value="">Selecciona un punto de entrega</option>
 </select>
+
+<div id="otroPuntoContainer" style="display: none;">
+  <label for="otroPunto">Escribe tu punto de entrega:</label>
+  <input type="text" id="otroPunto" name="otroPunto" placeholder="Ingresa el punto de entrega">
+  <p style="font-size: 14px; color: #666; margin-top: 5px;">
+  *El costo adicional de entrega será calculado de acuerdo con la ubicación y se le informará al momento de contactarle.
+</p>
+</div>
 
   <label>Sabores:</label>
   <div class="checkbox-group">
@@ -314,7 +322,7 @@ function actualizarPuntosEntrega() {
       "Smar Zaragoza",
       "Soriana Porvenir",
       "Gonzales Troncoso",
-      "Otro punto con costo extra"
+      "Otro punto con costo adicional"
     ];
   }
 
@@ -325,6 +333,19 @@ function actualizarPuntosEntrega() {
     selectEntrega.appendChild(option);
   });
 }
+
+function mostrarOtroPunto() {
+  const entrega = document.getElementById("entrega").value;
+  const contenedor = document.getElementById("otroPuntoContainer");
+
+  if (entrega === "Otro punto con costo adicional") {
+    contenedor.style.display = "block";
+  } else {
+    contenedor.style.display = "none";
+    document.getElementById("otroPunto").value = "";
+  }
+}
+
 
 function mostrarMensajeDescuento(mensaje, esDescuento) {
   const mensajeDiv = document.getElementById('mensajeDescuento');
@@ -360,7 +381,7 @@ if (saborSeleccionado.value === "Chocolate" && !colorChocolate) {
   const form = e.target;
   const formData = new FormData(form);
 
-  fetch("https://formsubmit.co/yarisapple.snacks@gmail.com", {
+  fetch("https://formsubmit.co/yarisapple.snack@gmail.com", {
     method: "POST",
     body: formData
   })
