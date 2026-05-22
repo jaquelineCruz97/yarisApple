@@ -171,7 +171,7 @@
   <label for="cantidad">Cantidad:</label>
   <input type="number" id="cantidad" name="cantidad" required oninput="calcularPrecio(); actualizarPuntosEntrega();">
   <label for="entrega">Lugar de entrega:</label>
-<select id="entrega" name="entrega" required onchange="mostrarOtroPunto()">
+<select id="entrega" name="entrega" required onchange="mostrarOtroPunto(); calcularPrecio();">
   <option value="">Selecciona un punto de entrega</option>
 </select>
 
@@ -350,6 +350,8 @@ function mostrarOtroPunto() {
     contenedor.style.display = "none";
     document.getElementById("otroPunto").value = "";
   }
+
+  calcularPrecio();
 }
 
 
