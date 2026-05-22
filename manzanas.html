@@ -287,7 +287,13 @@ function calcularPrecio() {
   const precioUnitario = precioBase + extra;
   const total = cantidad * precioUnitario;
 
+  const entregaSeleccionada = document.getElementById('entrega')?.value;
+
+if (entregaSeleccionada === "Otro punto con costo adicional") {
+  document.getElementById('precioTotal').textContent = `$${total.toFixed(2)} (más costo de entrega)`;
+} else {
   document.getElementById('precioTotal').textContent = `$${total.toFixed(2)}`;
+}
   document.getElementById('totalInput').value = `$${total.toFixed(2)} MXN`;
 
   const unidadDisplay = document.getElementById('precioUnidad');
