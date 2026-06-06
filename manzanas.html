@@ -228,8 +228,14 @@
   <label><input type="radio" name="presentacion" value="Vaso de acrílico" onchange="calcularPrecio()"> Vaso de acrílico</label>
   </div>
 
-  <label for="fechayhoraevento">Fecha y hora del evento:</label>
-  <input type="datetime-local" id="fechayhoraevento" name="fechayhoraevento" required>
+  <label for="fechahora">Fecha y hora del evento:</label>
+
+<label>Fecha y hora del evento:</label>
+
+<div class="fecha-hora-box">
+  <input type="date" id="fecha" name="fecha" required>
+  <input type="time" id="hora" name="hora" required>
+</div>
 
   <label for="especificaciones">Agrega más especificaciones:</label>
   <textarea id="especificaciones" name="especificaciones" rows="4" placeholder="Escribe aquí cualquier detalle especial..."></textarea>

@@ -207,6 +207,34 @@ position: sticky;
   transform: scale(1.05);
 }
 
+.fecha-hora-box{
+  display:flex;
+  gap:0;
+  border:1px solid #ccc;
+  border-radius:10px;
+  overflow:hidden;
+  background:white;
+}
+
+.fecha-hora-box input{
+  flex:1;
+  border:none;
+  padding:12px;
+  font-size:1rem;
+  outline:none;
+  font-family:'Montserrat', sans-serif;
+}
+
+/* separador visual */
+.fecha-hora-box input:first-child{
+  border-right:1px solid #e0e0e0;
+}
+
+/* efecto bonito al seleccionar */
+.fecha-hora-box:focus-within{
+  border-color:#015826;
+  box-shadow:0 0 6px rgba(1,88,38,0.3);
+}
     /* Estilo de Footer */
   footer {
     background-color: #015826; 
@@ -271,15 +299,29 @@ body {
       display: block;
       margin-top: 10px;
       font-weight: 500;
+      
     }
     input[type="text"],
     input[type="number"],
+
+
     select {
       width: 100%;
       padding: 8px;
       margin-top: 5px;
       border-radius: 6px;
       border: 1px solid #ccc;
+    }
+    
+  select:focus {
+  border-color: #015826;
+  box-shadow: 0 0 6px rgba(1, 88, 38, 0.3);
+  outline: none;
+}
+    input:focus{
+  border-color: #015826;
+  box-shadow: 0 0 6px rgba(1, 88, 38, 0.3);
+  outline: none;
     }
     .checkbox-group {
       display: flex;
@@ -303,6 +345,13 @@ body {
   border: 1px solid #ccc;
   resize: vertical;
 }
+
+textarea:focus{
+  border-color: #015826;
+  box-shadow: 0 0 6px rgba(1, 88, 38, 0.3);
+  outline: none;
+    }
+
 
 .divtotal{
 margin-top: 15px; 
