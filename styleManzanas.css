@@ -30,6 +30,14 @@
     margin-bottom: 10px;        /* Espacio entre logo y texto */
   }
   /* Estilo de Header */
+  .logo-navbar{
+  display:none;
+}
+
+.logo-navbar img{
+  width:50px;
+  height:auto;
+}
   
   nav ul {
 position: sticky;
@@ -360,6 +368,31 @@ input[type="datetime-local"] {
     display: flex; /* Mostramos cuando se activa */
   }
   
+  nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 15px;
+}
+
+.logo-navbar{
+  display:block;
+}
+
+.logo{
+  display:none;
+}
+
+.menu-toggle{
+  display:block;
+  font-size:32px;
+  padding:0;
+}
+
+nav ul{
+  width:100%;
+  margin-top:10px;
+}
 
       .galeria {
   column-count: 1;
@@ -395,5 +428,23 @@ input[type="datetime-local"] {
   .manzanasTrabajos{
     column-count: 2;
   }
+
+  .seccion-principal{
+  padding:20px;
+  text-align:center;
+}
+
+.info-lado,
+.formManzanas{
+  padding:15px;
+}
+
+form{
+  width:100%;
+}
+
+.modal-content{
+  width:95%;
+}
 
 }
