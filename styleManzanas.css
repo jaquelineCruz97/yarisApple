@@ -25,7 +25,7 @@
   }
   
   .logo {
-    width: 30vh;               /* Tamaño del logo */
+    width: 23vh;               /* Tamaño del logo */
     height: auto;
     margin-bottom: 10px;        /* Espacio entre logo y texto */
   }
@@ -389,7 +389,7 @@ input[type="datetime-local"] {
     .seccion-principal {
       padding: 0;
     }
-    
+
   .galeria{
     column-count:1;
   }
