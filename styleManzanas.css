@@ -217,8 +217,10 @@ position: sticky;
   }
   
   footer p {
-    font-family: 'Arial', sans-serif;
-  }
+  font-family: 'Arial', sans-serif;
+  padding: 0;
+  margin: 0;
+}
 
   footer .social-icons {
   margin: 10px 0;
@@ -342,89 +344,58 @@ input[type="datetime-local"] {
   box-sizing: border-box;
 }
 
- @media (max-width: 480px) {
-  .container {
-    padding: 10px;
+ @media (max-width:480px){
+
+  .container{
+    padding:10px;
   }
 
-  .logo {
-    max-width: 180px;
+  .logo{
+    display:none;
   }
 
-   .menu-toggle {
-    display: block;
-    text-align: right;
+  .logo-navbar{
+    display:block;
   }
 
   nav{
-  position: relative;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:10px 15px;
-}
-
-nav ul{
-  display:none;
-  position:absolute;
-  top:100%;
-  left:0;
-  width:100%;
-  background: #4caf50;
-  z-index:1000;
-  padding:15px 0;
-  box-shadow:0 4px 8px rgba(0,0,0,0.1);
-}
-
-nav ul.show{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-}
-
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    display: none; /* Ocultamos por defecto */
-    padding: 20px 0;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 15px;
   }
 
-  nav ul.show {
-    display: flex; /* Mostramos cuando se activa */
+  .menu-toggle{
+    display:block;
+    font-size:32px;
+    padding:0;
   }
-  
-  nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:10px 15px;
-}
 
-.logo-navbar{
-  display:block;
-}
+  nav ul{
+    width:100%;
+    display:none;
+    flex-direction:column;
+    align-items:center;
+    gap:15px;
+    padding-top:15px;
+    margin-top:10px;
+  }
 
-.logo{
-  display:none;
-}
+  nav ul.show{
+    display:flex;
+  }
 
-.menu-toggle{
-  display:block;
-  font-size:32px;
-  padding:0;
-}
+    .seccion-principal {
+      padding: 0;
+    }
+    
+  .galeria{
+    column-count:1;
+  }
 
-nav ul{
-  width:100%;
-  margin-top:10px;
-}
-
-      .galeria {
-  column-count: 1;
-      }
   .manzanasTrabajos{
-    column-count: 1;
+    column-count:1;
   }
 }
 
